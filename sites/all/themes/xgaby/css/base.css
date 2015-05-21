@@ -1326,3 +1326,7 @@ tr.selected td {
 .social-buttons ul li[rel="gplus"] a:hover {
   background: url("../images/social/social_icons.png") -210px 52px;
 }
+
+.page-blog .view-content .views-row .article {
+  text-align: center;
+}
