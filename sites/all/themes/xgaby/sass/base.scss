@@ -74,28 +74,28 @@
     &[rel="twitter"] a:hover {
       background: url("../images/social/social_icons.png") -210px 52px;
     }
-    
+
     &[rel="yt"] a {
       background: url("../images/social/social_icons.png") -210px 0;
     }
     &[rel="yt"] a:hover {
       background: url("../images/social/social_icons.png") -210px 52px;
     }
-    
+
     &[rel="pi"] a {
       background: url("../images/social/social_icons.png") -210px 0;
     }
     &[rel="pi"] a:hover {
       background: url("../images/social/social_icons.png") -210px 52px;
     }
-    
+
     &[rel="skype"] a {
       background: url("../images/social/social_icons.png") -210px 0;
     }
     &[rel="skype"] a:hover {
       background: url("../images/social/social_icons.png") -210px 52px;
     }
-    
+
     &[rel="gplus"] a {
       background: url("../images/social/social_icons.png") -210px 0;
     }
@@ -113,5 +113,37 @@
         text-align: center;
       }
     }
+  }
+}
+
+#homepage-pager {
+  text-align: center;
+  margin: 30px auto 0;
+  a {
+    border: 1px solid grey;
+    padding: 1px;
+    margin: 6px 20px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+  }
+  a span {
+    background: rgb(255, 255, 255);
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    display: block;
+    padding: 4px;
+    width: 9px;
+  }
+
+  a.selected span {
+    background: #d68caf;
+  }
+
+  a.selected span {
+    background: rgb(135, 215, 160);
   }
 }

@@ -1330,3 +1330,33 @@ tr.selected td {
 .page-blog .view-content .views-row .article {
   text-align: center;
 }
+
+#homepage-pager {
+  text-align: center;
+  margin: 30px auto 0;
+}
+#homepage-pager a {
+  border: 1px solid grey;
+  padding: 1px;
+  margin: 6px 20px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+}
+#homepage-pager a span {
+  background: white;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  display: block;
+  padding: 4px;
+  width: 9px;
+}
+#homepage-pager a.selected span {
+  background: #d68caf;
+}
+#homepage-pager a.selected span {
+  background: #87d7a0;
+}

@@ -7,17 +7,17 @@
  * @see https://drupal.org/node/1728148
  */
 ?>
-
+THE TEMPLATE IS NOT IN USE (Panels Everywhere is used).
 <div class="page-wrapper">
 
   <header class="page-header" role="header">
-    <?php if ($logo && FALSE): ?>
+    <?php if ($logo): ?>
       <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
         <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
       </a>
     <?php endif; ?>
 
-     <?php if (($site_name || $site_slogan) && FALSE): ?> <!--!!!!!!!!!!!!!!!-->
+     <?php if ($site_name || $site_slogan): ?> <!--!!!!!!!!!!!!!!!-->
       <div class="name-and-slogan">
         <?php if ($site_name): ?>
           <?php if ($title): ?>
@@ -62,7 +62,7 @@
     </nav> <!-- /.page-navigation -->
   <?php endif; ?>
 
-  <?php if ($breadcrumb): ?>
+  <?php if ($breadcrumb && FALSE): ?>
     <div class="breadcrumb-wrapper"><?php print $breadcrumb; ?></div>
   <?php endif; ?>
 
