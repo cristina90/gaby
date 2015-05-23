@@ -39,6 +39,16 @@ function xgaby_core_block_info() {
     'cache' => DRUPAL_CACHE_GLOBAL,
   );
 
+  $blocks['xgaby_mini_contact'] = array(
+    'info' => t('Bottom Contact Mini'),
+    'cache' => DRUPAL_CACHE_GLOBAL,
+  );
+
+  $blocks['xgaby_find_me_links'] = array(
+    'info' => t('Find Me Links'),
+    'cache' => DRUPAL_CACHE_GLOBAL,
+  );
+
   return $blocks;
 }
 
@@ -56,18 +66,41 @@ function xgaby_core_block_view($delta = '') {
       break;
 
     case 'xgaby_home_main':
-      
+
       $main_menu = menu_navigation_links('main-menu');
       $vars['main_menu'] = theme('links__system_main_menu', array(
-          'links' => $main_menu,
-          'attributes' => array(
+        'links' => $main_menu,
+        'attributes' => array(
           'id' => 'main-menu',
           'class' => array('links', 'inline', 'clearfix')),
-          //'heading' => t('Main menu'),
-        ));
-      
-//      $vars['count_block_title'] = variable_get('count_block_title');
+        //'heading' => t('Main menu'),
+      ));
+
       $block['content'] = theme('xgaby_home_main', $vars);
+      break;
+
+    case 'xgaby_mini_contact':
+      $mini_footer = variable_get('xgaby_mini_contact');
+      if ($mini_footer) {
+        $block['content'] = $mini_footer;
+      }
+      break;
+
+    case 'xgaby_find_me_links':
+
+      $vars = ['links' => []];
+      $quantity = range(0, 2);
+
+      foreach ($quantity as $source) {
+        if ($source = variable_get('xgaby_find_me_link_' . ++$source)) {
+          $vars['links'][] = $source;
+        }
+      }
+
+      if (!empty($vars['links'])) {
+        $block['subject'] = t('Find me live on');
+        $block['content'] = theme('xgaby_find_me_links', $vars);
+      }
       break;
   }
 
@@ -147,6 +180,11 @@ function xgaby_core_theme($existing, $type, $theme, $path) {
     ),
     'xgaby_home_main' => array(
       'template' => 'xgaby-home-main',
+      'arguments' => array('vars' => NULL),
+      'path' => $path . '/theme',
+    ),
+    'xgaby_find_me_links' => array(
+      'template' => 'xgaby-find-me-links',
       'arguments' => array('vars' => NULL),
       'path' => $path . '/theme',
     ),
