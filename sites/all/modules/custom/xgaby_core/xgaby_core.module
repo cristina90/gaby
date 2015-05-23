@@ -275,3 +275,14 @@ function HOOK_preprocess_views_view(&$vars) {
     //dsm($view, 'main list view');
   }
 }
+
+
+/**
+ * Implements hook_entity_info_alter().
+ */
+function xgaby_core_entity_info_alter(&$entity_info) {
+  $entity_info['node']['view modes']['popular'] = array(
+    'label' => t('Popular'),
+    'custom settings' => FALSE,
+  );
+}
