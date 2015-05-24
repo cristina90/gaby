@@ -13,7 +13,7 @@
 @import "normalize";
 
 /* Component (SMACSS module) rules */
-@import "components/misc";
+//@import "components/misc";
 
 // Optionally, add your own components here.
 @import "print";
@@ -22,86 +22,126 @@
 /* @import "theme-A"; */
 /* @import "theme-B"; */
 
+
+@font-face {
+  font-family: Raleway-ExtraBold;
+  src: url(../fonts/Raleway-ExtraBold.ttf);
+}
+@font-face {
+  font-family: Raleway-ExtraLight;
+  src: url(../fonts/Raleway-ExtraLight.ttf);
+}
+@font-face {
+  font-family: Raleway-Medium;
+  src: url(../fonts/Raleway-Medium.ttf);
+}
+
+
+//first
+
+  .html{
+    background: url("/sites/all/themes/xgaby/images/page/BG.png") repeat-y top left;
+    background-size: 100% auto;
+  }
+
+
+
+.inline li, .item-main-menu {
+  display: inline;
+  margin: 0 26px;
+  a{
+    text-decoration: none;
+    color: #000000;
+    box-shadow: 1px solid #424242;
+  }
+
+}
+.inline a:hover, .item-main-menu a:hover {
+  color:#ff9898;
+}
+.main-logo{
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  h1{
+    margin: 0px;
+    font-family: Raleway-ExtraBold;
+    font-size: 67px;
+    height: 70px;
+  }
+  p{
+    margin: 0px;
+    font-family: Raleway-ExtraLight;
+    font-size: 24px;
+    letter-spacing: 6px;
+  }
+}
+#main-menu, .menu-main-menu {
+  background: #fff;
+  width: 545px;
+  text-align: center;
+  float: none;
+  padding: 8px;
+  margin: 35px auto 0;
+  a{
+    font-family: Raleway-Medium;
+    font-size: 18px;
+  }
+}
+
+.main-home-block {
+  background: rgba(0, 0, 0, 0.27);
+  padding: 30px 0px 37px 0px;
+  margin-top: 22%;
+}
+
+.footer-social{
+  text-align: center;
+}
+
 .social-buttons ul {
   padding: 0;
   list-style-type: none;
   list-style-image: none;
+  margin: 33px 0px 6px;
 
   li {
     display: inline;
     a {
       text-decoration: none;
       margin: 4px 10px;
-      /*padding: 5px 20px 5px 20px;*/
       color: #85848a;
       background: none;
-      width: 52px;
-      height: 52px;
+      width: 45px;
+      height: 45px;
       display: inline-block;
-      /*float: left;*/
-
       cursor: pointer;
       -webkit-border-radius: 25px;
       -moz-border-radius: 25px;
       border-radius: 25px;
-
-      // original
-      -webkit-transition: background 0.2s ease-out;
-      -moz-transition: background 0.2s ease-out;
-      -o-transition: background 0.2s ease-out;
-      transition: background 0.2s ease-out;
-
-      // end original
-
-      -webkit-transition: all ease 0.3s;
-      -moz-transition: all ease 0.3s;
-      -o-transition: all ease 0.3s;
-      -ms-transition: all ease 0.3s;
-      transition: all ease 0.3s;
-
-      &:hover {
-        -webkit-transform:rotate(180deg);
-        -moz-transform:rotate(180deg);
-        -o-transform:rotate(180deg);
-        -ms-transform:rotate(180deg);
-        transform:rotate(180deg);
-      }
     }
 
     &[rel="twitter"] a {
-      background: url("../images/social/social_icons.png") -210px 0;
+      background: url("/sites/all/themes/xgaby/images/page/social_icons.png") -2px 0;
+      background-size: auto 45px;
     }
-    &[rel="twitter"] a:hover {
-      background: url("../images/social/social_icons.png") -210px 52px;
-    }
-
     &[rel="yt"] a {
-      background: url("../images/social/social_icons.png") -210px 0;
+      background: url("/sites/all/themes/xgaby/images/page/social_icons.png") -57px 0;
+      background-size: auto 45px;
     }
-    &[rel="yt"] a:hover {
-      background: url("../images/social/social_icons.png") -210px 52px;
-    }
-
     &[rel="pi"] a {
-      background: url("../images/social/social_icons.png") -210px 0;
+      background: url("/sites/all/themes/xgaby/images/page/social_icons.png") -109px 0;
+      background-size: auto 45px;
     }
-    &[rel="pi"] a:hover {
-      background: url("../images/social/social_icons.png") -210px 52px;
-    }
-
     &[rel="skype"] a {
-      background: url("../images/social/social_icons.png") -210px 0;
+      background: url("/sites/all/themes/xgaby/images/page/social_icons.png") -164px 0;
+      background-size: auto 45px;
     }
-    &[rel="skype"] a:hover {
-      background: url("../images/social/social_icons.png") -210px 52px;
+    &[rel="gplus"] a {
+      background: url("/sites/all/themes/xgaby/images/page/social_icons.png") -213px 0;
+      background-size: auto 45px;
     }
 
-    &[rel="gplus"] a {
-      background: url("../images/social/social_icons.png") -210px 0;
-    }
-    &[rel="gplus"] a:hover {
-      background: url("../images/social/social_icons.png") -210px 52px;
-    }
 
   }
 }
@@ -116,34 +156,5 @@
   }
 }
 
-#homepage-pager {
-  text-align: center;
-  margin: 30px auto 0;
-  a {
-    border: 1px solid grey;
-    padding: 1px;
-    margin: 6px 20px;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    border-radius: 8px;
-    text-decoration: none;
-    display: inline-block;
-  }
-  a span {
-    background: rgb(255, 255, 255);
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    border-radius: 6px;
-    display: block;
-    padding: 4px;
-    width: 9px;
-  }
 
-  a.selected span {
-    background: #d68caf;
-  }
-
-  a.selected span {
-    background: rgb(135, 215, 160);
-  }
-}
+//about
