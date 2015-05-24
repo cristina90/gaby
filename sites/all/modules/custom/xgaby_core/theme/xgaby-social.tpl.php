@@ -8,8 +8,8 @@
         <?php if ($youtube_site_url) : ?>
           <li rel="yt"><a title="YouTube" href="<?php print $youtube_site_url; ?>"></a></li>
         <?php endif; ?>
-        <?php if ($pininterest_site_url) : ?>
-          <li rel="pi"><a title="Pinterest" href="<?php print $pininterest_site_url; ?>"></a></li>
+        <?php if ($instagram_site_url) : ?>
+          <li rel="instagram"><a title="Instagram" href="<?php print $instagram_site_url; ?>"></a></li>
         <?php endif; ?>
         <?php if ($skype_site_url) : ?>
           <li rel="skype"><a title="Skype" href="<?php print $skype_site_url; ?>"></a></li>

@@ -9,16 +9,16 @@
  * Implements hook_menu().
  */
 function xgaby_core_menu() {
-  $items['admin/config/general_xgaby_settings'] = array(
+  $items['admin/config/general_xgaby_settings'] = [
     'title' => 'Global XGABYMOOR Settings',
     'type' => MENU_LOCAL_TASK,
     'description' => "Configure your sitewide XGABYMOOR settings.",
     'page callback' => 'drupal_get_form',
-    'page arguments' => array('xgaby_core_admin_form'),
-    'access arguments' => array('administer nodes'),
+    'page arguments' => ['xgaby_core_admin_form'],
+    'access arguments' => ['administer nodes'],
     'file' => 'xgaby_core.admin.inc',
     'weight' => 5,
-  );
+  ];
 
   return $items;
 }
@@ -59,23 +59,23 @@ function xgaby_core_block_view($delta = '') {
   $block = array();
 
   switch ($delta) {
-
     case 'xgaby_social':
       $vars = _xgaby_core_get_social_data();
       $block['content'] = theme('xgaby_social', $vars);
       break;
 
     case 'xgaby_home_main':
-
       $main_menu = menu_navigation_links('main-menu');
-      $vars['main_menu'] = theme('links__system_main_menu', array(
+      $vars['main_menu'] = theme('links__system_main_menu', [
         'links' => $main_menu,
-        'attributes' => array(
+        'attributes' => [
           'id' => 'main-menu',
-          'class' => array('links', 'inline', 'clearfix')),
-        //'heading' => t('Main menu'),
-      ));
+          'class' => ['links', 'inline', 'clearfix'],
+        #'heading' => t('Main menu'),
+        ]]
+      );
 
+      $vars['site_name'] = variable_get('site_name', 'XGABYMOOR');
       $block['content'] = theme('xgaby_home_main', $vars);
       break;
 
@@ -153,7 +153,7 @@ function _xgaby_core_get_social_data() {
   $footer_vars = array(
     'twitter_site_url',
     'youtube_site_url',
-    'pininterest_site_url',
+    'instagram_site_url',
     'skype_site_url',
     'gplus_site_url',
   );
@@ -275,7 +275,6 @@ function HOOK_preprocess_views_view(&$vars) {
     //dsm($view, 'main list view');
   }
 }
-
 
 /**
  * Implements hook_entity_info_alter().

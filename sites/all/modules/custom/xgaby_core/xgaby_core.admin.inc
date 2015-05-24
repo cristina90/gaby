@@ -55,10 +55,10 @@ function xgaby_core_admin_form() {
     '#default_value' => variable_get('youtube_site_url'),
   );
 
-  $form['footer']['pininterest_site_url'] = array(
+  $form['footer']['instagram_site_url'] = array(
     '#type' => 'textfield',
-    '#title' => t('PinInterest Site URL'),
-    '#default_value' => variable_get('pininterest_site_url'),
+    '#title' => t('Instagram Site URL'),
+    '#default_value' => variable_get('instagram_site_url'),
   );
 
   $form['footer']['skype_site_url'] = array(
