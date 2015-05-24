@@ -159,9 +159,7 @@ function _xgaby_core_get_social_data() {
   );
 
   foreach ($footer_vars as $var_name) {
-    if ($var = variable_get($var_name)) {
-      $vars[$var_name] = $var;
-    }
+    $vars[$var_name] = variable_get($var_name, FALSE);
   }
   $vars['social_count'] = count($vars);
 
