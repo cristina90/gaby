@@ -208,38 +208,15 @@ function HOOK_node_view($node, $view_mode) {
   }
 }
 
-function fibonacci($n) {
-
-//0, 1, 1, 2, 3, 5, 8, 13, 21
-
-  /* this is an error condition
-    returning -1 is arbitrary - we could
-    return anything we want for this
-    error condition:
-   */
-  if ($n < 0)
-    return -1;
-
-  if ($n == 0)
-    return 0;
-
-  if ($n == 1 || $n == 2)
-    return 1;
-
-  $int1 = 1;
-  $int2 = 1;
-
-  $fib = 0;
-
-//start from n==3
-  for ($i = 1; $i <= $n - 2; $i++) {
-    $fib = $int1 + $int2;
-//swap the values out:
-    $int2 = $int1;
-    $int1 = $fib;
-  }
-
-  return $fib;
+function fibonacci() {
+    $last = 0;
+    $current = 1;
+    yield 1;
+    while (true) {
+        $current = $last + $current;
+        $last = $current - $last;
+        yield $current;
+    }
 }
 
 function HOOK_preprocess_html(&$vars) {
