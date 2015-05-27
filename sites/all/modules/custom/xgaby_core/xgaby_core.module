@@ -208,16 +208,16 @@ function HOOK_node_view($node, $view_mode) {
   }
 }
 
-function fibonacci() {
-    $last = 0;
-    $current = 1;
-    yield 1;
-    while (true) {
-        $current = $last + $current;
-        $last = $current - $last;
-        yield $current;
-    }
-}
+#function fibonacci() {
+#    $last = 0;
+#    $current = 1;
+#    yield 1;
+#    while (true) {
+#        $current = $last + $current;
+#        $last = $current - $last;
+#        yield $current;
+#    }
+#}
 
 function HOOK_preprocess_html(&$vars) {
   $bing_tag = array(
