@@ -447,16 +447,81 @@ table {
 /* @import "theme-B"; */
 @font-face {
   font-family: Raleway-ExtraBold;
-  src: url(../fonts/Raleway-ExtraBold.ttf); }
+  src: url("../fonts/Raleway-ExtraBold.ttf"); }
+@font-face {
+  font-family: Raleway-Bold;
+  src: url("../fonts/Raleway-Bold.ttf"); }
+@font-face {
+  font-family: Raleway-SemiBold;
+  src: url("../fonts/Raleway-SemiBold.ttf"); }
 @font-face {
   font-family: Raleway-ExtraLight;
-  src: url(../fonts/Raleway-ExtraLight.ttf); }
+  src: url("../fonts/Raleway-ExtraLight.ttf"); }
+@font-face {
+  font-family: Raleway-Light;
+  src: url("../fonts/Raleway-Light.ttf"); }
 @font-face {
   font-family: Raleway-Medium;
-  src: url(../fonts/Raleway-Medium.ttf); }
-.html {
-  background: url("/sites/all/themes/xgaby/images/page/BG.png") repeat-y top left;
+  src: url("../fonts/Raleway-Medium.ttf"); }
+@font-face {
+  font-family: Segoe Print;
+  src: url("../fonts/Segoe Print.ttf"); }
+@font-face {
+  font-family: MyriadPro-Regular;
+  src: url("../fonts/MyriadPro-Regular.otf"); }
+@font-face {
+  font-family: Raleway-Regular;
+  src: url("../fonts/Raleway-Regular.ttf"); }
+body {
+  text-align: center; }
+
+@media screen and (max-width: 480px) {
+  .page-homepage {
+    background: url("/sites/all/themes/xgaby/images/page/BG.png") repeat-y center center;
+    background-size: auto 100%; } }
+@media screen and (min-width: 481px) {
+  .page-homepage {
+    background: url("/sites/all/themes/xgaby/images/page/BG.png") repeat-y top left;
+    background-size: 100% auto; } }
+.page-homepage .main-logo {
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff; }
+  @media screen and (max-width: 320px) {
+    .page-homepage .main-logo h1 {
+      font-size: 33px;
+      height: 40px; }
+    .page-homepage .main-logo p {
+      font-size: 12px;
+      letter-spacing: 3px; } }
+  @media screen and (min-width: 320px) and (max-width: 768px) {
+    .page-homepage .main-logo h1 {
+      font-size: 50px;
+      height: 55px; }
+    .page-homepage .main-logo p {
+      font-size: 18px;
+      letter-spacing: 4px; } }
+  @media screen and (min-width: 768px) {
+    .page-homepage .main-logo h1 {
+      font-size: 67px;
+      height: 70px; }
+    .page-homepage .main-logo p {
+      font-size: 24px;
+      letter-spacing: 6px; } }
+  .page-homepage .main-logo h1 {
+    margin: 0px;
+    font-family: Raleway-ExtraBold; }
+  .page-homepage .main-logo p {
+    margin: 0px;
+    font-family: Raleway-ExtraLight; }
+
+.page-blog, .page-node, .page-video, .page-pictures {
+  background: url("/sites/all/themes/xgaby/images/page/BLOG-page.png") repeat-y top left;
   background-size: 100% auto; }
+  .page-blog .pane-content .pane-display, .page-node .pane-content .pane-display, .page-video .pane-content .pane-display, .page-pictures .pane-content .pane-display {
+    width: 960px;
+    margin: auto;
+    background: #ffffff; }
 
 .inline li, .item-main-menu {
   display: inline;
@@ -469,36 +534,46 @@ table {
 .inline a:hover, .item-main-menu a:hover {
   color: #ff9898; }
 
-.main-logo {
-  text-align: center;
-  text-decoration: none;
-  color: #ffffff; }
-  .main-logo h1 {
-    margin: 0px;
-    font-family: Raleway-ExtraBold;
-    font-size: 67px;
-    height: 70px; }
-  .main-logo p {
-    margin: 0px;
-    font-family: Raleway-ExtraLight;
-    font-size: 24px;
-    letter-spacing: 6px; }
-
+@media screen and (max-width: 320px) {
+  #main-menu, .menu-main-menu {
+    width: 80%;
+    display: inline-block; }
+    #main-menu li, .menu-main-menu li {
+      display: inline;
+      width: 100%;
+      margin: 0;
+      float: left; } }
+@media screen and (min-width: 320px) and (max-width: 520px) {
+  #main-menu, .menu-main-menu {
+    width: 70%;
+    display: inline-block; }
+    #main-menu li, .menu-main-menu li {
+      display: inline;
+      width: 50%;
+      margin: 0;
+      float: left; }
+    #main-menu li:last-child, .menu-main-menu li:last-child {
+      width: 100%; } }
+@media screen and (min-width: 520px) {
+  #main-menu, .menu-main-menu {
+    display: inline-block;
+    width: 50%;
+    max-width: 540px; } }
 #main-menu, .menu-main-menu {
   background: #fff;
-  width: 545px;
   text-align: center;
   float: none;
-  padding: 8px;
-  margin: 35px auto 0; }
+  margin: 41px auto 0;
+  padding: 8px; }
   #main-menu a, .menu-main-menu a {
     font-family: Raleway-Medium;
-    font-size: 18px; }
+    font-size: 18px;
+    text-transform: lowercase; }
 
 .main-home-block {
   background: rgba(0, 0, 0, 0.27);
   padding: 30px 0px 37px 0px;
-  margin-top: 22%; }
+  margin-top: 23%; }
 
 .footer-social {
   text-align: center; }
@@ -528,17 +603,255 @@ table {
     .social-buttons ul li[rel="yt"] a {
       background: url("/sites/all/themes/xgaby/images/page/social_icons.png") -57px 0;
       background-size: auto 45px; }
-    .social-buttons ul li[rel="pi"] a {
+    .social-buttons ul li[rel="instagram"] a {
       background: url("/sites/all/themes/xgaby/images/page/social_icons.png") -109px 0;
       background-size: auto 45px; }
     .social-buttons ul li[rel="skype"] a {
-      background: url("/sites/all/themes/xgaby/images/page/social_icons.png") -164px 0;
+      background: url("/sites/all/themes/xgaby/images/page/social_icons.png") -162px 0;
       background-size: auto 45px; }
     .social-buttons ul li[rel="gplus"] a {
       background: url("/sites/all/themes/xgaby/images/page/social_icons.png") -213px 0;
       background-size: auto 45px; }
 
+.page-blog .pane-page-content {
+  max-width: 960px;
+  margin: auto; }
 .page-blog .view-content .views-row .article {
   text-align: center; }
+
+#logo img {
+  margin: 31px auto;
+  width: 433px;
+  float: none;
+  display: block;
+  background: url("/sites/all/themes/xgaby/images/page/xgaby_logo_0.png");
+  height: 55px; }
+
+.pane-page-content .pane-title {
+  text-align: center;
+  font-family: Segoe Print;
+  font-size: 51px;
+  color: #ffffff; }
+
+.container .pane-title {
+  text-align: center;
+  font-family: Raleway-Bold;
+  font-size: 24px;
+  color: #888888;
+  background: #ffffff;
+  margin: 0;
+  padding-top: 24px; }
+
+.panel-2col {
+  background: #ffffff;
+  margin: 25px auto; }
+
+.view-display-id-blog_index .views-field-title {
+  font-family: Segoe Print;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 10px; }
+  .view-display-id-blog_index .views-field-title a {
+    text-decoration: none;
+    color: #000000; }
+
+.view-display-id-blog_index .panel-col-first {
+  width: 36% !important; }
+.view-display-id-blog_index .panel-col-last {
+  width: 54% !important;
+  margin: auto 40px; }
+
+.view-display-id-blog_index .views-field-created {
+  font-family: Raleway-Regular;
+  font-size: 18px;
+  text-align: center; }
+
+.views-field-body {
+  font-family: MyriadPro-Regular;
+  font-size: 16px;
+  color: #000000;
+  line-height: 1.4; }
+
+.container .views-field-nothing span {
+  width: 40%;
+  border: 2px solid #ff9898;
+  margin: auto;
+  display: block; }
+.container .views-field-nothing a {
+  text-decoration: none;
+  text-align: center;
+  color: #ff9898;
+  font-family: Raleway-Medium;
+  font-size: 15px;
+  text-transform: uppercase;
+  line-height: 3.4;
+  display: block; }
+
+/*
+.item-list{
+  text-align: center;
+  li{
+    display: inline;
+    width: 64px;
+    height: 46px;
+    background: #ffffff;
+    padding: 20px;
+    margin: 9px;
+  }
+  a{
+    font-family: MyriadPro-Regular;
+    font-size: 20px;
+    text-decoration: none;
+    color: #888888;
+  }
+  a:hover{
+    color:#ff9898;
+  }
+}
+*/
+.item-list {
+  margin-top: 57px;
+  font-family: MyriadPro-Regular;
+  font-size: 20px;
+  text-align: center; }
+  .item-list li {
+    padding: 0;
+    display: inline;
+    margin: 0px 8px; }
+    .item-list li a, .item-list li.pager-current {
+      text-decoration: none;
+      background-color: #fff;
+      color: #888888;
+      display: inline-block;
+      padding: 11px 24px; }
+      .item-list li a:hover, .item-list li a:focus, .item-list li.pager-current:hover, .item-list li.pager-current:focus {
+        color: #ff9898; }
+    .item-list li.pager-current {
+      color: #ff9898;
+      cursor: default; }
+    .item-list li.pager-last, .item-list li.pager-first, .item-list lipager-ellipsis {
+      display: none;
+      visibility: hidden; }
+
+.view-display-id-most_popular_blog .views-field-created .field-content {
+  font-family: Raleway-Regular;
+  font-size: 13px;
+  text-align: center; }
+
+.view-display-id-most_popular_blog {
+  margin: auto; }
+  .view-display-id-most_popular_blog .views-row {
+    width: 23%;
+    float: left; }
+  .view-display-id-most_popular_blog .panel-2col {
+    width: auto; }
+
+.view-display-id-most_popular_blog a {
+  font-family: Segoe Print;
+  font-size: 18px;
+  text-decoration: none;
+  color: #000000; }
+.view-display-id-most_popular_blog .views-field-title, .view-display-id-most_popular_blog .views-field-created {
+  text-align: center; }
+
+.view-display-id-most_popular_blog .panel-2col .panel-col-first {
+  width: auto;
+  margin-left: 76px; }
+
+.pane-views-index-pages-most-popular-blog .pane-content {
+  background: #ffffff;
+  display: inline-block; }
+
+.pane-xgaby-core-xgaby-find-me-links .pane-content {
+  max-width: 960px;
+  margin: auto; }
+  .pane-xgaby-core-xgaby-find-me-links .pane-content .find-me-source {
+    background: #ffffff;
+    margin: auto auto 30px;
+    text-align: center;
+    font-size: 24px;
+    font-family: MyriadPro-Regular;
+    color: #ff9898;
+    line-height: 3;
+    text-transform: lowercase; }
+    .pane-xgaby-core-xgaby-find-me-links .pane-content .find-me-source .find-me-source a:hover {
+      color: #000000; }
+
+.pane-xgaby-core-xgaby-find-me-links .pane-title {
+  text-align: center;
+  font-family: Segoe Print;
+  font-size: 36px;
+  color: #ffffff; }
+
+.pane-xgaby-core-xgaby-mini-contact {
+  background: #ffffff;
+  margin: auto;
+  line-height: 4.4; }
+  .pane-xgaby-core-xgaby-mini-contact .pane-content {
+    text-align: center;
+    font-family: Raleway-Light;
+    font-size: 24px;
+    color: #000000; }
+    .pane-xgaby-core-xgaby-mini-contact .pane-content span {
+      font-family: Raleway-SemiBold; }
+
+.page-node .contextual-links-region .panel-1col {
+  background: #ffffff;
+  padding: 38px; }
+.page-node .image-about {
+  float: left; }
+.page-node h4 {
+  float: right;
+  font-family: "Segoe Print";
+  font-size: 30px;
+  color: #000000; }
+.page-node .description {
+  float: left;
+  width: 58%;
+  padding: 0px 58px; }
+.page-node p {
+  font-family: MyriadPro-Regular;
+  font-size: 16px;
+  line-height: 1.4; }
+.page-node h3 {
+  font-family: "Segoe Print";
+  font-size: 30px;
+  color: #000000; }
+  .page-node h3 span {
+    color: #ff9898; }
+
+.page-pictures .contextual-links-region {
+  width: 1173px;
+  margin: auto; }
+
+.view-display-id-pictures_index .views-field-field-media-image .field-content {
+  float: left;
+  height: 283px; }
+.view-display-id-pictures_index li {
+  margin-top: 44px; }
+
+.pane-content {
+  max-width: 960px;
+  margin: auto; }
+
+@media screen and (max-width: 320px) {
+  .pane-xgaby-core-xgaby-mini-contact {
+    margin: 0 15px; }
+
+  .pane-content {
+    padding: 0 15px; }
+    .pane-content .pane-content {
+      padding: 0; } }
+@media screen and (min-width: 321px) and (max-width: 960px) {
+  .pane-xgaby-core-xgaby-mini-contact {
+    margin: 0 30px; }
+
+  .pane-content {
+    padding: 0 30px; }
+    .pane-content .pane-content {
+      padding: 0; } }
+@media screen and (max-width: 961px) {
+  .pane-xgaby-core-xgaby-mini-contact {
+    max-width: 960px; } }
 
 /*# sourceMappingURL=base.css.map */

@@ -5,16 +5,12 @@
  * When you turn on CSS aggregation at admin/config/development/performance, all
  * of these @include files will be combined into a single file.
  */
-
 /* Import Sass mixins, variables, Compass modules, etc. */
 @import "init";
-
 /* HTML element (SMACSS base) rules */
 @import "normalize";
-
 /* Component (SMACSS module) rules */
 //@import "components/misc";
-
 // Optionally, add your own components here.
 @import "print";
 
@@ -22,95 +18,185 @@
 /* @import "theme-A"; */
 /* @import "theme-B"; */
 
-
 @font-face {
   font-family: Raleway-ExtraBold;
   src: url("../fonts/Raleway-ExtraBold.ttf");
 }
+
 @font-face {
   font-family: Raleway-Bold;
   src: url("../fonts/Raleway-Bold.ttf");
 }
+
 @font-face {
   font-family: Raleway-SemiBold;
   src: url("../fonts/Raleway-SemiBold.ttf");
 }
+
 @font-face {
   font-family: Raleway-ExtraLight;
   src: url("../fonts/Raleway-ExtraLight.ttf");
 }
+
 @font-face {
   font-family: Raleway-Light;
   src: url("../fonts/Raleway-Light.ttf");
 }
+
 @font-face {
   font-family: Raleway-Medium;
   src: url("../fonts/Raleway-Medium.ttf");
 }
+
 @font-face {
   font-family: Segoe Print;
   src: url("../fonts/Segoe Print.ttf");
 }
+
 @font-face {
   font-family: MyriadPro-Regular;
   src: url("../fonts/MyriadPro-Regular.otf");
 }
+
 @font-face {
   font-family: Raleway-Regular;
   src: url("../fonts/Raleway-Regular.ttf");
 }
 
+body {
+  text-align: center;
+}
 
-//first
+//Index page
 
-  .page-homepage{
+.page-homepage {
+  @media screen and (max-width: 480px) {
+    background: url("/sites/all/themes/xgaby/images/page/BG.png") repeat-y center center;
+    background-size: auto 100%;
+  }
+  @media screen and (min-width: 481px) {
     background: url("/sites/all/themes/xgaby/images/page/BG.png") repeat-y top left;
     background-size: 100% auto;
-  }.page-blog, .page-node, .page-video, .page-pictures{
-    background: url("/sites/all/themes/xgaby/images/page/BLOG-page.png") repeat-y top left;
-    background-size: 100% auto;
   }
+  .main-logo {
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
 
+    @media screen and (max-width: 320px) {
+      h1 {
+        font-size: 33px;
+        height: 40px;
+      }
+      p {
+        font-size: 12px;
+        letter-spacing: 3px;
+      }
+    }
 
+    @media screen and (min-width: 320px) and (max-width: 768px) {
+      h1 {
+        font-size: 50px;
+        height: 55px;
+      }
+      p {
+        font-size: 18px;
+        letter-spacing: 4px;
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      h1 {
+        font-size: 67px;
+        height: 70px;
+      }
+      p {
+        font-size: 24px;
+        letter-spacing: 6px;
+      }
+    }
+
+    h1 {
+      margin: 0px;
+      font-family: Raleway-ExtraBold;
+    }
+    p {
+      margin: 0px;
+      font-family: Raleway-ExtraLight;
+    }
+  }
+}
+
+.page-blog, .page-node, .page-video, .page-pictures {
+  background: url("/sites/all/themes/xgaby/images/page/BLOG-page.png") repeat-y top left;
+  background-size: 100% auto;
+ .pane-content{
+   .pane-display{
+     width: 960px;
+     margin: auto;
+     background: #ffffff;
+   }
+ }
+}
 
 .inline li, .item-main-menu {
   display: inline;
   margin: 0 26px;
-  a{
+  a {
     text-decoration: none;
     color: #000000;
     box-shadow: 1px solid #424242;
   }
 
 }
+
 .inline a:hover, .item-main-menu a:hover {
-  color:#ff9898;
+  color: #ff9898;
 }
-.main-logo{
-  text-align: center;
-  text-decoration: none;
-  color: #ffffff;
-  h1{
-    margin: 0px;
-    font-family: Raleway-ExtraBold;
-    font-size: 67px;
-    height: 70px;
-  }
-  p{
-    margin: 0px;
-    font-family: Raleway-ExtraLight;
-    font-size: 24px;
-    letter-spacing: 6px;
+
+@media screen and (max-width: 320px) {
+  #main-menu, .menu-main-menu {
+    width:80%;
+    display: inline-block;
+    li {
+      display: inline;
+      width: 100%;
+      margin: 0;
+      float: left;
+    }
   }
 }
+
+@media screen and (min-width: 320px) and (max-width: 520px) {
+  #main-menu, .menu-main-menu {
+    width: 70%;
+    display: inline-block;
+    li {
+      display: inline;
+      width: 50%;
+      margin: 0;
+      float: left;
+    }
+    li:last-child {
+      width: 100%;
+    }
+  }
+}
+@media screen and (min-width: 520px) {
+  #main-menu, .menu-main-menu {
+    display: inline-block;
+    width: 50%;
+    max-width: 540px;
+  }
+}
+
 #main-menu, .menu-main-menu {
   background: #fff;
-  width: 54%;
   text-align: center;
   float: none;
+  margin: 41px auto 0;
   padding: 8px;
-  margin: 3% auto 0;
-  a{
+  a {
     font-family: Raleway-Medium;
     font-size: 18px;
     text-transform: lowercase;
@@ -120,10 +206,10 @@
 .main-home-block {
   background: rgba(0, 0, 0, 0.27);
   padding: 30px 0px 37px 0px;
-  margin-top: 33%;
+  margin-top: 23%;
 }
 
-.footer-social{
+.footer-social {
   text-align: center;
 }
 
@@ -170,11 +256,14 @@
       background-size: auto 45px;
     }
 
-
   }
 }
 
 .page-blog {
+  .pane-page-content {
+    max-width: 960px;
+    margin: auto;
+  }
   .view-content {
     .views-row {
       .article {
@@ -184,17 +273,19 @@
   }
 }
 
-
 //about
-#logo img{
+#logo img {
   margin: 31px auto;
   width: 433px;
   float: none;
   display: block;
+  background: url("/sites/all/themes/xgaby/images/page/xgaby_logo_0.png");
+  height: 55px;
 
 }
-.pane-page-content{
-  .pane-title{
+
+.pane-page-content {
+  .pane-title {
     text-align: center;
     font-family: Segoe Print;
     font-size: 51px;
@@ -202,10 +293,10 @@
   }
 }
 
-.container{
-  .pane-title{
+.container {
+  .pane-title {
     text-align: center;
-    font-family:Raleway-Bold;
+    font-family: Raleway-Bold;
     font-size: 24px;
     color: #888888;
     background: #ffffff;
@@ -214,64 +305,70 @@
   }
 }
 
-.panel-2col{
+.panel-2col {
   background: #ffffff;
   margin: 25px auto;
 }
-.view-display-id-blog_index{
-.views-field-title{
-  font-family: Segoe Print;
-  font-size: 30px;
-  text-align: center;
-  margin-top: 10px;
-  a{
-    text-decoration: none;
-    color: #000000;
+
+.view-display-id-blog_index {
+  .views-field-title {
+    font-family: Segoe Print;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 10px;
+    a {
+      text-decoration: none;
+      color: #000000;
+    }
   }
 }
+
+.view-display-id-blog_index {
+  .panel-col-first {
+    width: 36% !important;
+  }
+  .panel-col-last {
+    width: 54% !important;
+    margin: auto 40px
+  }
 }
-.view-display-id-blog_index{
-.panel-col-first{
-  width: 36%  !important;
+
+.view-display-id-blog_index {
+  .views-field-created {
+    font-family: Raleway-Regular;
+    font-size: 18px;
+    text-align: center;
+  }
 }
-.panel-col-last{
-  width: 54%  !important;
-  margin: auto 40px
-}
-}
-.view-display-id-blog_index{
-.views-field-created  {
-  font-family: Raleway-Regular;
-  font-size: 18px;
-  text-align: center;
-}
-}
-.views-field-body{
+
+.views-field-body {
   font-family: MyriadPro-Regular;
   font-size: 16px;
   color: #000000;
   line-height: 1.4;
 }
-.container{
-.views-field-nothing {
-  span{
-    width: 40%;
-    border: 2px solid #ff9898;
-    margin: auto;
-    display: block;
-  }
-  a{
-    text-decoration: none;
-    text-align: center;
-    color:#ff9898 ;
-    font-family: Raleway-Medium;
-    font-size: 15px;
-    text-transform: uppercase;
-    line-height: 3.4;
-    display: block;
+
+.container {
+  .views-field-nothing {
+    span {
+      width: 40%;
+      border: 2px solid #ff9898;
+      margin: auto;
+      display: block;
+    }
+    a {
+      text-decoration: none;
+      text-align: center;
+      color: #ff9898;
+      font-family: Raleway-Medium;
+      font-size: 15px;
+      text-transform: uppercase;
+      line-height: 3.4;
+      display: block;
+    }
   }
 }
-}
+
 /*
 .item-list{
   text-align: center;
@@ -296,19 +393,19 @@
 */
 
 .item-list {
-  margin-top:57px;
+  margin-top: 57px;
   font-family: MyriadPro-Regular;
   font-size: 20px;
   text-align: center;
   li {
-    padding:0;
+    padding: 0;
     display: inline;
     margin: 0px 8px;
 
     a, &.pager-current {
       text-decoration: none;
       background-color: #fff;
-      color:#888888;
+      color: #888888;
       display: inline-block;
       padding: 11px 24px;
 
@@ -319,7 +416,7 @@
 
     &.pager-current {
       color: #ff9898;
-      cursor:default;
+      cursor: default;
     }
 
     &.pager-last, &.pager-first, &pager-ellipsis {
@@ -328,55 +425,61 @@
     }
   }
 }
-.view-display-id-most_popular_blog{
-.views-field-created{
-  .field-content{
-    font-family: Raleway-Regular;
-    font-size: 13px;
-    text-align: center
+
+.view-display-id-most_popular_blog {
+  .views-field-created {
+    .field-content {
+      font-family: Raleway-Regular;
+      font-size: 13px;
+      text-align: center
+    }
   }
 }
-}
-.view-display-id-most_popular_blog{
+
+.view-display-id-most_popular_blog {
   margin: auto;
-  .views-row{
+  .views-row {
     width: 23%;
     float: left;
   }
-  .panel-2col{
+  .panel-2col {
     width: auto;
   }
 }
-.view-display-id-most_popular_blog{
-  a{
+
+.view-display-id-most_popular_blog {
+  a {
     font-family: Segoe Print;
     font-size: 18px;
     text-decoration: none;
     color: #000000;
 
   }
-  .views-field-title{
+  .views-field-title, .views-field-created {
     text-align: center;
   }
 }
-.view-display-id-most_popular_blog{
-  .panel-2col{
-    .panel-col-first{
+
+.view-display-id-most_popular_blog {
+  .panel-2col {
+    .panel-col-first {
       width: auto;
       margin-left: 76px;
     }
   }
-  }
-.pane-views-index-pages-most-popular-blog{
- .pane-content{
-   background: #ffffff;
-   display: inline-block;
- }
 }
-.contextual-links-region {
-  width: 85%;
-  margin: auto;
+
+.pane-views-index-pages-most-popular-blog {
   .pane-content {
+    background: #ffffff;
+    display: inline-block;
+  }
+}
+
+.pane-xgaby-core-xgaby-find-me-links {
+  .pane-content {
+    max-width: 960px;
+    margin: auto;
     .find-me-source {
       background: #ffffff;
       margin: auto auto 30px;
@@ -386,13 +489,14 @@
       color: #ff9898;
       line-height: 3;
       text-transform: lowercase;
-      .find-me-source a:hover{
+      .find-me-source a:hover {
         color: #000000;
       }
     }
   }
 }
-.pane-xgaby-core-xgaby-find-me-links{
+
+.pane-xgaby-core-xgaby-find-me-links {
   .pane-title {
     text-align: center;
     font-family: Segoe Print;
@@ -400,74 +504,125 @@
     color: #ffffff;
   }
 }
-.pane-xgaby-core-xgaby-mini-contact{
+
+.pane-xgaby-core-xgaby-mini-contact {
   background: #ffffff;
+  margin: auto;
   line-height: 4.4;
-   .pane-content{
-     text-align: center;
-     font-family: Raleway-Light;
-     font-size: 24px;
-     color: #000000;
-     span{
-       font-family: Raleway-SemiBold;
-     }
-   }
+  .pane-content {
+    text-align: center;
+    font-family: Raleway-Light;
+    font-size: 24px;
+    color: #000000;
+    span {
+      font-family: Raleway-SemiBold;
+    }
+  }
 }
 
 //about
-.field-type-text-with-summary{
-  .field-item{
-    background: #ffffff;
-  height: 452px;
-    padding: 38px;
-}
-  .image-about{
+.page-node {
+  .contextual-links-region {
+    .panel-1col {
+      background: #ffffff;
+      padding: 38px;
+    }
+  }
+
+  .image-about {
     float: left;
   }
-  h4{
+  h4 {
     float: right;
     font-family: "Segoe Print";
     font-size: 30px;
     color: #000000;
   }
-  .description{
+  .description {
     float: left;
-    width: 65%;
+    width: 58%;
     padding: 0px 58px;
   }
-  p{
+  p {
     font-family: MyriadPro-Regular;
     font-size: 16px;
     line-height: 1.4
   }
-  h3{
+  h3 {
     font-family: "Segoe Print";
     font-size: 30px;
     color: #000000;
-    span{
+    span {
       color: #ff9898;
     }
   }
 }
 
 //photo
-.page-pictures{
-  .contextual-links-region{
+.page-pictures {
+  .contextual-links-region {
     width: 1173px;
     margin: auto;
   }
 }
 
-.view-display-id-pictures_index{
-  .views-field-field-media-image{
-    .field-content{
+.view-display-id-pictures_index {
+  .views-field-field-media-image {
+    .field-content {
       float: left;
       height: 283px;
     }
   }
-  li{
+  li {
     margin-top: 44px;
   }
+}
+
+
+
+
+//global
+
+.pane-content {
+  max-width: 960px;
+  margin: auto;
+}
+
+
+@media screen and (max-width: 320px) {
+  .pane-xgaby-core-xgaby-mini-contact {
+    margin: 0 15px;
+  }
+  .pane-content {
+    padding: 0 15px;
+    .pane-content {
+      padding: 0;
+    }
+  }
+
+}
+
+@media screen and (min-width: 321px) and (max-width: 960px) {
+  .pane-xgaby-core-xgaby-mini-contact {
+    margin: 0 30px;
+  }
+  .pane-content {
+    padding: 0 30px;
+    .pane-content {
+      padding: 0;
+    }
+  }
+
+}
+
+@media screen and (max-width: 961px) {
+  .pane-xgaby-core-xgaby-mini-contact {
+    max-width: 960px;
+  }
+  .pane-content {
+
+  }
+
 }
 
 
