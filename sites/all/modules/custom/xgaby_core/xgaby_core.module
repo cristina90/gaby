@@ -20,7 +20,20 @@ function xgaby_core_menu() {
     'weight' => 5,
   ];
 
+  $items['node/get/ajax/%/%'] = array(
+    'page callback' => '_xgaby_core_node_get_ajax',
+    'page arguments' => array(3, 4),
+    'type' => MENU_CALLBACK,
+    'access arguments' => array('access content'),
+  );
+
   return $items;
+}
+
+function _xgaby_core_node_get_ajax($nid, $view_mode) {
+  $node = node_load($nid);
+  print render(node_view($node, $view_mode));
+  drupal_page_footer();
 }
 
 /**

@@ -557,7 +557,7 @@ body {
 @media screen and (min-width: 520px) {
   #main-menu, .menu-main-menu {
     display: inline-block;
-    width: 50%;
+    width: 60%;
     max-width: 540px; } }
 #main-menu, .menu-main-menu {
   background: #fff;
@@ -834,24 +834,19 @@ body {
   max-width: 960px;
   margin: auto; }
 
-@media screen and (max-width: 320px) {
-  .pane-xgaby-core-xgaby-mini-contact {
-    margin: 0 15px; }
+.page-homepage .pane-content {
+  max-width: 100%;
+  margin: auto; }
 
+@media screen and (max-width: 320px) {
   .pane-content {
     padding: 0 15px; }
     .pane-content .pane-content {
       padding: 0; } }
 @media screen and (min-width: 321px) and (max-width: 960px) {
-  .pane-xgaby-core-xgaby-mini-contact {
-    margin: 0 30px; }
-
   .pane-content {
     padding: 0 30px; }
     .pane-content .pane-content {
       padding: 0; } }
-@media screen and (max-width: 961px) {
-  .pane-xgaby-core-xgaby-mini-contact {
-    max-width: 960px; } }
 
 /*# sourceMappingURL=base.css.map */
