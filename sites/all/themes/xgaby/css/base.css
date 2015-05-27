@@ -545,13 +545,15 @@ table {
   src: url("../fonts/Raleway-Regular.ttf");
 }
 .page-homepage {
-  background: url("/sites/all/themes/xgaby/images/page/BG.png") repeat-y top left;
+  background: url("/sites/all/themes/xgaby/images/page/BG.png") no-repeat center;
   background-size: 100% auto;
+  background-attachment: fixed;
 }
 
 .page-blog, .page-node, .page-video, .page-pictures {
-  background: url("/sites/all/themes/xgaby/images/page/BLOG-page.png") repeat-y top left;
+  background: url("/sites/all/themes/xgaby/images/page/BLOG-page.png") no-repeat center;
   background-size: 100% auto;
+  background-attachment: fixed;
 }
 
 .inline li, .item-main-menu {
