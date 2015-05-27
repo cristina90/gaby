@@ -25,22 +25,49 @@
 
 @font-face {
   font-family: Raleway-ExtraBold;
-  src: url(../fonts/Raleway-ExtraBold.ttf);
+  src: url("../fonts/Raleway-ExtraBold.ttf");
+}
+@font-face {
+  font-family: Raleway-Bold;
+  src: url("../fonts/Raleway-Bold.ttf");
+}
+@font-face {
+  font-family: Raleway-SemiBold;
+  src: url("../fonts/Raleway-SemiBold.ttf");
 }
 @font-face {
   font-family: Raleway-ExtraLight;
-  src: url(../fonts/Raleway-ExtraLight.ttf);
+  src: url("../fonts/Raleway-ExtraLight.ttf");
+}
+@font-face {
+  font-family: Raleway-Light;
+  src: url("../fonts/Raleway-Light.ttf");
 }
 @font-face {
   font-family: Raleway-Medium;
-  src: url(../fonts/Raleway-Medium.ttf);
+  src: url("../fonts/Raleway-Medium.ttf");
+}
+@font-face {
+  font-family: Segoe Print;
+  src: url("../fonts/Segoe Print.ttf");
+}
+@font-face {
+  font-family: MyriadPro-Regular;
+  src: url("../fonts/MyriadPro-Regular.otf");
+}
+@font-face {
+  font-family: Raleway-Regular;
+  src: url("../fonts/Raleway-Regular.ttf");
 }
 
 
 //first
 
-  .html{
+  .page-homepage{
     background: url("/sites/all/themes/xgaby/images/page/BG.png") repeat-y top left;
+    background-size: 100% auto;
+  }.page-blog, .page-node, .page-video, .page-pictures{
+    background: url("/sites/all/themes/xgaby/images/page/BLOG-page.png") repeat-y top left;
     background-size: 100% auto;
   }
 
@@ -78,21 +105,22 @@
 }
 #main-menu, .menu-main-menu {
   background: #fff;
-  width: 545px;
+  width: 54%;
   text-align: center;
   float: none;
   padding: 8px;
-  margin: 35px auto 0;
+  margin: 3% auto 0;
   a{
     font-family: Raleway-Medium;
     font-size: 18px;
+    text-transform: lowercase;
   }
 }
 
 .main-home-block {
   background: rgba(0, 0, 0, 0.27);
   padding: 30px 0px 37px 0px;
-  margin-top: 22%;
+  margin-top: 33%;
 }
 
 .footer-social{
@@ -129,12 +157,12 @@
       background: url("/sites/all/themes/xgaby/images/page/social_icons.png") -57px 0;
       background-size: auto 45px;
     }
-    &[rel="pi"] a {
+    &[rel="instagram"] a {
       background: url("/sites/all/themes/xgaby/images/page/social_icons.png") -109px 0;
       background-size: auto 45px;
     }
     &[rel="skype"] a {
-      background: url("/sites/all/themes/xgaby/images/page/social_icons.png") -164px 0;
+      background: url("/sites/all/themes/xgaby/images/page/social_icons.png") -162px 0;
       background-size: auto 45px;
     }
     &[rel="gplus"] a {
@@ -158,3 +186,290 @@
 
 
 //about
+#logo img{
+  margin: 31px auto;
+  width: 433px;
+  float: none;
+  display: block;
+
+}
+.pane-page-content{
+  .pane-title{
+    text-align: center;
+    font-family: Segoe Print;
+    font-size: 51px;
+    color: #ffffff;
+  }
+}
+
+.container{
+  .pane-title{
+    text-align: center;
+    font-family:Raleway-Bold;
+    font-size: 24px;
+    color: #888888;
+    background: #ffffff;
+    margin: 0;
+    padding-top: 24px;
+  }
+}
+
+.panel-2col{
+  background: #ffffff;
+  margin: 25px auto;
+}
+.view-display-id-blog_index{
+.views-field-title{
+  font-family: Segoe Print;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 10px;
+  a{
+    text-decoration: none;
+    color: #000000;
+  }
+}
+}
+.view-display-id-blog_index{
+.panel-col-first{
+  width: 36%  !important;
+}
+.panel-col-last{
+  width: 54%  !important;
+  margin: auto 40px
+}
+}
+.view-display-id-blog_index{
+.views-field-created  {
+  font-family: Raleway-Regular;
+  font-size: 18px;
+  text-align: center;
+}
+}
+.views-field-body{
+  font-family: MyriadPro-Regular;
+  font-size: 16px;
+  color: #000000;
+  line-height: 1.4;
+}
+.container{
+.views-field-nothing {
+  span{
+    width: 40%;
+    border: 2px solid #ff9898;
+    margin: auto;
+    display: block;
+  }
+  a{
+    text-decoration: none;
+    text-align: center;
+    color:#ff9898 ;
+    font-family: Raleway-Medium;
+    font-size: 15px;
+    text-transform: uppercase;
+    line-height: 3.4;
+    display: block;
+  }
+}
+}
+/*
+.item-list{
+  text-align: center;
+  li{
+    display: inline;
+    width: 64px;
+    height: 46px;
+    background: #ffffff;
+    padding: 20px;
+    margin: 9px;
+  }
+  a{
+    font-family: MyriadPro-Regular;
+    font-size: 20px;
+    text-decoration: none;
+    color: #888888;
+  }
+  a:hover{
+    color:#ff9898;
+  }
+}
+*/
+
+.item-list {
+  margin-top:57px;
+  font-family: MyriadPro-Regular;
+  font-size: 20px;
+  text-align: center;
+  li {
+    padding:0;
+    display: inline;
+    margin: 0px 8px;
+
+    a, &.pager-current {
+      text-decoration: none;
+      background-color: #fff;
+      color:#888888;
+      display: inline-block;
+      padding: 11px 24px;
+
+      &:hover, &:focus {
+        color: #ff9898;
+      }
+    }
+
+    &.pager-current {
+      color: #ff9898;
+      cursor:default;
+    }
+
+    &.pager-last, &.pager-first, &pager-ellipsis {
+      display: none;
+      visibility: hidden;
+    }
+  }
+}
+.view-display-id-most_popular_blog{
+.views-field-created{
+  .field-content{
+    font-family: Raleway-Regular;
+    font-size: 13px;
+    text-align: center
+  }
+}
+}
+.view-display-id-most_popular_blog{
+  margin: auto;
+  .views-row{
+    width: 23%;
+    float: left;
+  }
+  .panel-2col{
+    width: auto;
+  }
+}
+.view-display-id-most_popular_blog{
+  a{
+    font-family: Segoe Print;
+    font-size: 18px;
+    text-decoration: none;
+    color: #000000;
+
+  }
+  .views-field-title{
+    text-align: center;
+  }
+}
+.view-display-id-most_popular_blog{
+  .panel-2col{
+    .panel-col-first{
+      width: auto;
+      margin-left: 76px;
+    }
+  }
+  }
+.pane-views-index-pages-most-popular-blog{
+ .pane-content{
+   background: #ffffff;
+   display: inline-block;
+ }
+}
+.contextual-links-region {
+  width: 85%;
+  margin: auto;
+  .pane-content {
+    .find-me-source {
+      background: #ffffff;
+      margin: auto auto 30px;
+      text-align: center;
+      font-size: 24px;
+      font-family: MyriadPro-Regular;
+      color: #ff9898;
+      line-height: 3;
+      text-transform: lowercase;
+      .find-me-source a:hover{
+        color: #000000;
+      }
+    }
+  }
+}
+.pane-xgaby-core-xgaby-find-me-links{
+  .pane-title {
+    text-align: center;
+    font-family: Segoe Print;
+    font-size: 36px;
+    color: #ffffff;
+  }
+}
+.pane-xgaby-core-xgaby-mini-contact{
+  background: #ffffff;
+  line-height: 4.4;
+   .pane-content{
+     text-align: center;
+     font-family: Raleway-Light;
+     font-size: 24px;
+     color: #000000;
+     span{
+       font-family: Raleway-SemiBold;
+     }
+   }
+}
+
+//about
+.field-type-text-with-summary{
+  .field-item{
+    background: #ffffff;
+  height: 452px;
+    padding: 38px;
+}
+  .image-about{
+    float: left;
+  }
+  h4{
+    float: right;
+    font-family: "Segoe Print";
+    font-size: 30px;
+    color: #000000;
+  }
+  .description{
+    float: left;
+    width: 65%;
+    padding: 0px 58px;
+  }
+  p{
+    font-family: MyriadPro-Regular;
+    font-size: 16px;
+    line-height: 1.4
+  }
+  h3{
+    font-family: "Segoe Print";
+    font-size: 30px;
+    color: #000000;
+    span{
+      color: #ff9898;
+    }
+  }
+}
+
+//photo
+.page-pictures{
+  .contextual-links-region{
+    width: 1173px;
+    margin: auto;
+  }
+}
+
+.view-display-id-pictures_index{
+  .views-field-field-media-image{
+    .field-content{
+      float: left;
+      height: 283px;
+    }
+  }
+  li{
+    margin-top: 44px;
+  }
+}
+
+
+
+
