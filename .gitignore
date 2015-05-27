@@ -7,6 +7,9 @@ sites/*/private
 
 sites/default/settings.php.save
 
+
+
+
 sites/all/themes/xgaby/.sass-cache/*/base.scssc
 sites/all/themes/xgaby/.sass-cache/*/*
 
@@ -17,3 +20,7 @@ sites/all/themes/xgaby/.sass-cache**
 **.sass-cache**
 .sass-cache
 .sass-cache/*
+
+syntax: regexp
+sites/all/themes/(.*)/\.sass-cache/(.*)$
+sites/all/themes/(.*)/sass-extensions/(.*)$
