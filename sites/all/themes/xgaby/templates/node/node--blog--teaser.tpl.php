@@ -23,7 +23,7 @@
   </div>
   <div class="blog-teaser-right">
     <h2><?php print $title; ?></h2>
-    <span property="dc:date dc:created" content="<?php print format_date($created, 'long'); ?>" datatype="xsd:dateTime"><?php print format_date($created, 'x_gabymoor'); ?></span>
+    <span class="field-created" property="dc:date dc:created" content="<?php print format_date($created, 'long'); ?>" datatype="xsd:dateTime"><?php print format_date($created, 'x_gabymoor'); ?></span>
     <?php print render($content['body']); ?>
     <div class="read-more-btn" data-nid="<?php print $nid; ?>">
       <span><?php print t('Continue Reading'); ?></span>

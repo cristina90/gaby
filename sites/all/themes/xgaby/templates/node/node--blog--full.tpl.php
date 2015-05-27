@@ -11,7 +11,7 @@
 
   <?php print render($content['field_media_images']); ?>
   <h2><?php print $title; ?></h2>
-  <span property="dc:date dc:created" content="<?php print format_date($created, 'long'); ?>" datatype="xsd:dateTime"><?php print format_date($created, 'x_gabymoor'); ?></span>
+  <span class="field-created" property="dc:date dc:created" content="<?php print format_date($created, 'long'); ?>" datatype="xsd:dateTime"><?php print format_date($created, 'x_gabymoor'); ?></span>
   <?php print render($content['body']); ?>
   <div class="read-less-btn" data-nid="<?php print $nid; ?>">
     <span><?php print t('Hide Post'); ?></span>
