@@ -25,9 +25,11 @@
         var parentWrapper = $(this).parents('article'),
           nid = $(this).parent().attr('data-nid'),
           url = '/node/get/ajax/' + nid + '/full';
+        var parentWrapperTop = parentWrapper.offset().top;
 
         $.get(url, function(data) {
           parentWrapper.html(data);
+          $('html, body').animate({scrollTop: parentWrapperTop}, 400);
         });
 
         return false;
@@ -37,14 +39,16 @@
         var parentWrapper = $(this).parents('article'),
           nid = $(this).parent().attr('data-nid'),
           url = '/node/get/ajax/' + nid + '/teaser';
+        var parentWrapperTop = parentWrapper.offset().top;
 
         $.get(url, function(data) {
           parentWrapper.html(data);
+          $('html, body').animate({scrollTop: parentWrapperTop}, 400);
         });
 
         return false;
       });
+
     }
   };
-
 })(jQuery);
