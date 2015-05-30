@@ -139,12 +139,11 @@ body {
     text-decoration: none;
     color: #000000;
     box-shadow: 1px solid #424242;
+    &:hover, &.active-trail {
+      color:#ff9898;
+    }
   }
 
-}
-
-.inline a:hover, .item-main-menu a:hover {
-  color: #ff9898;
 }
 
 @media screen and (max-width: 320px) {
