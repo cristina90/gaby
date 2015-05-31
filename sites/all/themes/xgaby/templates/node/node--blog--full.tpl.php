@@ -7,7 +7,7 @@
  * @see https://drupal.org/node/1728164
  */
 ?>
-<article class="node-<?php print $nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+<article class="node-full node-<?php print $nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
   <?php print render($content['field_media_images']); ?>
   <h2><?php print $title; ?></h2>

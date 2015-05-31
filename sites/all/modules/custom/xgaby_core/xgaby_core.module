@@ -32,8 +32,13 @@ function xgaby_core_menu() {
 
 function _xgaby_core_node_get_ajax($nid, $view_mode) {
   $node = node_load($nid);
-  print render(node_view($node, $view_mode));
-  drupal_page_footer();
+  if ($node) {
+    $node_view = node_view($node, $view_mode);
+    print render($node_view);
+    drupal_page_footer();
+    return;
+  }
+  drupal_not_found();
 }
 
 /**

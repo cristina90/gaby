@@ -403,9 +403,15 @@ body {
       }
     }
   }
+  
+  .node-full.node-blog {
+    .field-name-field-media-images{
+      .field-item {
+        display: inline-block;
+      }
+    }
+  }
 }
-
-
 
 @media screen and (max-width: 320px){
   .page-blog{
