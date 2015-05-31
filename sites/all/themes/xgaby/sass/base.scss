@@ -130,8 +130,17 @@ body {
 }
 
 .page-blog, .page-node, .page-video, .page-pictures {
-  background: url("/sites/all/themes/xgaby/images/page/BLOG-page.png") repeat-y top left;
+  background: url("/sites/all/themes/xgaby/images/page/BLOG-page.png") no-repeat center;
   background-size: 100% auto;
+  background-attachment: fixed;
+
+  @media screen and (max-width: 1200px) {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
 }
 
 .inline li, .item-main-menu {
@@ -405,9 +414,15 @@ body {
       }
     }
   }
+  
+  .node-full.node-blog {
+    .field-name-field-media-images{
+      .field-item {
+        display: inline-block;
+      }
+    }
+  }
 }
-
-
 
 @media screen and (max-width: 320px){
   .page-blog{

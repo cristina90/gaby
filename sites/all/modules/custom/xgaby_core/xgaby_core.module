@@ -32,8 +32,13 @@ function xgaby_core_menu() {
 
 function _xgaby_core_node_get_ajax($nid, $view_mode) {
   $node = node_load($nid);
-  print render(node_view($node, $view_mode));
-  drupal_page_footer();
+  if ($node) {
+    $node_view = node_view($node, $view_mode);
+    print render($node_view);
+    drupal_page_footer();
+    return;
+  }
+  drupal_not_found();
 }
 
 /**
@@ -59,6 +64,11 @@ function xgaby_core_block_info() {
 
   $blocks['xgaby_find_me_links'] = array(
     'info' => t('Find Me Links'),
+    'cache' => DRUPAL_CACHE_GLOBAL,
+  );
+
+  $blocks['xgaby_homepage_slider'] = array(
+    'info' => t('Homepage slider.'),
     'cache' => DRUPAL_CACHE_GLOBAL,
   );
 
@@ -102,7 +112,7 @@ function xgaby_core_block_view($delta = '') {
     case 'xgaby_find_me_links':
 
       $vars = ['links' => []];
-      $quantity = range(0, 2);
+      $quantity = range(0, 4);
 
       foreach ($quantity as $source) {
         if ($source = variable_get('xgaby_find_me_link_' . ++$source)) {
@@ -113,6 +123,27 @@ function xgaby_core_block_view($delta = '') {
       if (!empty($vars['links'])) {
         $block['subject'] = t('Find me live on');
         $block['content'] = theme('xgaby_find_me_links', $vars);
+      }
+      break;
+
+    case 'xgaby_homepage_slider':
+      $files = file_scan_directory(drupal_get_path('theme', 'xgaby') . '/images/home_slider', '/.*/');
+
+      $output = '';
+      $i = 0;
+      foreach ($files as $uri => $file_data) {
+        if ($i == 0) {
+          $output .= '<img src="' . $uri . '" class="home-slide-' . $i . '">';
+        }
+        else {
+          $output .= '<img style="display:none;" src="' . $uri . '" class="home-slide-' . $i . '">';
+        }
+
+        ++$i;
+      }
+
+      if (isset($output)) {
+        $block['content'] = $output;
       }
       break;
   }
@@ -159,17 +190,17 @@ function xgaby_core_block_view($delta = '') {
  * @todo Re-thing the logic. Be beautiful.
  */
 function _xgaby_core_get_social_data() {
-  static $vars = array();
+  static $vars = [];
   if (!empty($vars)) {
     return $vars;
   }
-  $footer_vars = array(
+  $footer_vars = [
     'twitter_site_url',
     'youtube_site_url',
     'instagram_site_url',
     'skype_site_url',
     'gplus_site_url',
-  );
+  ];
 
   foreach ($footer_vars as $var_name) {
     $vars[$var_name] = variable_get($var_name, FALSE);
@@ -233,13 +264,13 @@ function HOOK_node_view($node, $view_mode) {
 #}
 
 function HOOK_preprocess_html(&$vars) {
-  $bing_tag = array(
+  $bing_tag = [
     '#tag' => 'meta', // The #tag is the html tag - <link />
-    '#attributes' => array(
+    '#attributes' => [
       'name' => 'msvalidate.01',
       'content' => 'To be added...',
-    ),
-  );
+    ],
+  ];
 
   drupal_add_html_head($bing_tag, 'bing_search_index');
 }
@@ -268,8 +299,8 @@ function HOOK_preprocess_views_view(&$vars) {
  * Implements hook_entity_info_alter().
  */
 function xgaby_core_entity_info_alter(&$entity_info) {
-  $entity_info['node']['view modes']['popular'] = array(
+  $entity_info['node']['view modes']['popular'] = [
     'label' => t('Popular'),
     'custom settings' => FALSE,
-  );
+  ];
 }
