@@ -70,14 +70,16 @@ body {
 //Index page
 
 .page-homepage {
-  @media screen and (max-width: 480px) {
-    background: url("/sites/all/themes/xgaby/images/page/BG.png") repeat-y center center;
-    background-size: auto 100%;
-  }
-  @media screen and (min-width: 481px) {
-    background: url("/sites/all/themes/xgaby/images/page/BG.png") repeat-y top left;
-    background-size: 100% auto;
-  }
+  //@media screen and (max-width: 480px) {
+  //  background: url("/sites/all/themes/xgaby/images/page/BG.png") no-repeat center;
+  //  background-size:  100% auto;
+  //  background-attachment: fixed;
+  //}
+  //@media screen and (min-width: 481px) {
+  //  background: url("/sites/all/themes/xgaby/images/page/BG.png") no-repeat center;
+  //  background-size: 100% auto;
+  //  background-attachment: fixed;
+  //}
   .main-logo {
     text-align: center;
     text-decoration: none;
@@ -598,6 +600,63 @@ body {
     }
   }
 }
+
+
+
+
+//read more
+.view-index-pages{
+  .field-created{
+    font-family: Raleway-Regular;
+    font-size: 18px;
+    text-align: center;
+    display: block;
+  }
+    .field-type-text-with-summary{
+      padding: 0px 70px;
+    font-family: MyriadPro-Regular;
+    font-size: 16px;
+    color: #000000;
+    line-height: 1.4;
+  }
+  h2{
+    margin-top: 20px;
+    line-height: 1.1;
+    font-size: 30px;
+    text-align: center;
+    font-family: Segoe Print;
+    display: inline-block;
+  }
+  .read-less-btn{
+    padding: 0 0 30px;
+    span {
+      width: 149px;
+      border: 2px solid #ff9898;
+      margin: auto;
+      display: block;
+      text-decoration: none;
+      text-align: center;
+      color: #ff9898;
+      font-family: Raleway-Medium;
+      font-size: 15px;
+      text-transform: uppercase;
+      line-height: 3.4;
+      display: block;
+      cursor: pointer;
+    }
+
+  }
+  .field-name-field-media-images{
+    .field-item img{
+      float: left;
+      width: 33.3%;
+    }
+  }
+}
+
+
+
+
 
 //about
 .page-node-1 {
