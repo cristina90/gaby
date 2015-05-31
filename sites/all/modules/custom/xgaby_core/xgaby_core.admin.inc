@@ -23,19 +23,28 @@ function xgaby_core_admin_form() {
   );
   $form['general']['xgaby_find_me_link_1'] = array(
     '#type' => 'textfield',
-    '#title' => t('Find me Link'),
+    '#title' => t('Find me Link 1'),
+    '#description' => t('Leave it empty if you don\'t want this link.'),
     '#default_value' => variable_get('xgaby_find_me_link_1'),
   );
 
   $form['general']['xgaby_find_me_link_2'] = array(
     '#type' => 'textfield',
-    '#title' => t('Find me Link'),
+    '#title' => t('Find me Link 2'),
+    '#description' => t('Leave it empty if you don\'t want this link.'),
     '#default_value' => variable_get('xgaby_find_me_link_2'),
   );
   $form['general']['xgaby_find_me_link_3'] = array(
     '#type' => 'textfield',
-    '#title' => t('Find me Link'),
+    '#title' => t('Find me Link 3'),
+    '#description' => t('Leave it empty if you don\'t want this link.'),
     '#default_value' => variable_get('xgaby_find_me_link_3'),
+  );
+    $form['general']['xgaby_find_me_link_4'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Find me Link 4'),
+    '#description' => t('Leave it empty if you don\'t want this link.'),
+    '#default_value' => variable_get('xgaby_find_me_link_4'),
   );
 
   $form['footer'] = array(
