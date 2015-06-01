@@ -10,8 +10,8 @@
 
   <!--To do: write JS which will handle the background change-->
   <div id="homepage-pager" class="pager">
-    <a href="#" class="selected"><span></span></a>
-    <a href="#"><span></span></a>
-    <a href="#"><span></span></a>
+    <a href="#" data-slide="0" class="selected"><span></span></a>
+    <a href="#" data-slide="1"><span></span></a>
+    <a href="#" data-slide="2"><span></span></a>
   </div>
 </div>

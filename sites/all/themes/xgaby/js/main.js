@@ -5,9 +5,25 @@
   Drupal.behaviors.homepageSlider = {
     attach: function(context) {
 
+      $('.home-slide-0').show();
+      $('.home-slide-1').show();
+      $('.home-slide-2').show();
+
+      var currentSlide = 0;
+      var slide = function(id) {
+        var classes = 'slide-right slide-from-left slide-left slide-from-right';
+        if (id < currentSlide){
+          $('.home-slide-' + currentSlide).removeClass(classes).addClass('slide-right');
+          $('.home-slide-' + id).removeClass(classes).addClass('slide-from-left');
+        } else if (id > currentSlide) {
+          $('.home-slide-' + currentSlide).removeClass(classes).addClass('slide-left');
+          $('.home-slide-' + id).removeClass(classes).addClass('slide-from-right');
+        }
+        currentSlide = id;
+      };
+
       $('#homepage-pager').on("click", "a", function() {
-        // Change the background, I guess.
-        // .................
+        slide($(this).data('slide'));
 
 
         $('#homepage-pager a').removeClass('selected');
@@ -44,11 +60,22 @@
         $.get(url, function(data) {
           parentWrapper.html(data);
           $('html, body').animate({scrollTop: parentWrapperTop}, 400);
+          checkBlogImages();
         });
 
         return false;
       });
 
+      var checkBlogImages = function() {
+        $('.node-blog').each(function(){
+          //console.log($('.blog-teaser-left', this).html());
+          if ($('.blog-teaser-left', this).html().replace(/\s/g, '') == '') {
+            $('.blog-teaser-left', this).hide();
+            $('.blog-teaser-right', this).css('width', '100%');
+          }
+        });
+      };
+      checkBlogImages();
     }
   };
 })(jQuery);
