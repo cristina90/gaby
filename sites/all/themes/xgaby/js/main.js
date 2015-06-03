@@ -39,7 +39,7 @@
           automateSlide();
         }, 5000);
       };
-      setTimeout(automateSlide, 3000);
+      //setTimeout(automateSlide, 3000);
 
       $('#homepage-pager').on("click", "a", function() {
         slide($(this).data('slide'));

@@ -127,12 +127,12 @@ function xgaby_core_block_view($delta = '') {
       break;
 
     case 'xgaby_homepage_slider':
-      $files = file_scan_directory(drupal_get_path('theme', 'xgaby') . '/images/home_slider', '/.*/');
-
+      $files = file_scan_directory(drupal_get_path('theme', 'xgaby') . '/images/home_slider', '/[png|jpg|jpeg]/');
+      ksort($files);
       $output = '';
       $i = 0;
       foreach ($files as $uri => $file_data) {
-        if ($i == 0) {
+        if (!$i) {
           $output .= '<img src="' . $uri . '" class="home-slide-' . $i . '">';
         }
         else {
