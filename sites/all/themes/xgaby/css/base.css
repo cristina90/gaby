@@ -698,11 +698,6 @@ body {
   margin: 0;
   padding-top: 24px; }
 
-/*.panel-2col {
-  background: #ffffff;
-  margin: 25px auto;
-}
-*/
 .page-blog .views-row {
   background: #ffffff;
   margin-top: 20px; }
@@ -845,7 +840,8 @@ body {
     font-family: MyriadPro-Regular;
     color: #ff9898;
     line-height: 3;
-    text-transform: lowercase; }
+    text-transform: lowercase;
+    cursor: pointer; }
     .pane-xgaby-core-xgaby-find-me-links .pane-content .find-me-source .find-me-source a:hover {
       color: #000000; }
 

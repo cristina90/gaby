@@ -6,12 +6,19 @@
     attach: function(context) {
 
       $('.home-slide-0').show();
-      $('.home-slide-1').show();
-      $('.home-slide-2').show();
+      $('.home-slide-1').show().css('left','-100%');
+      $('.home-slide-2').show().css('left','-100%');
 
       var currentSlide = 0;
       var slide = function(id) {
         var classes = 'slide-right slide-from-left slide-left slide-from-right';
+        $('#homepage-pager a').each(function() {
+          if ($(this).data('slide') === id) {
+            $(this).addClass('selected');
+          } else {
+            $(this).removeClass('selected');
+          }
+        });
         if (id < currentSlide){
           $('.home-slide-' + currentSlide).removeClass(classes).addClass('slide-right');
           $('.home-slide-' + id).removeClass(classes).addClass('slide-from-left');
@@ -21,6 +28,18 @@
         }
         currentSlide = id;
       };
+
+      var automateSlide = function() {
+        if (currentSlide == 2) {
+          slide(0);
+        } else {
+          slide(currentSlide+1);
+        }
+        setTimeout(function() {
+          automateSlide();
+        }, 5000);
+      };
+      setTimeout(automateSlide, 3000);
 
       $('#homepage-pager').on("click", "a", function() {
         slide($(this).data('slide'));
