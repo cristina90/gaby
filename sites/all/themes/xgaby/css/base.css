@@ -925,7 +925,8 @@ body {
     width: 100%;
     display: inline-block; }
     .page-blog .node-full .field-name-field-media-images .field-item img {
-      width: 100%; } }
+      width: 100%;
+      height: auto; } }
 @media screen and (min-width: 321px) and (max-width: 768px) {
   .page-blog .node-full .field-item p {
     padding: 0px 30px; }
@@ -933,7 +934,8 @@ body {
     width: 50%;
     display: inline-block; }
     .page-blog .node-full .field-name-field-media-images .field-item img {
-      width: 100%; }
+      width: 100%;
+      height: auto; }
   .page-blog .node-full .field-name-field-media-images .field-item:last-child {
     width: 100%;
     display: inline-block; } }
@@ -1089,37 +1091,37 @@ h3 {
 .slide-right {
   -webkit-animation-name: slide-right;
   /* Chrome, Safari, Opera */
-  -webkit-animation-duration: 1s;
+  -webkit-animation-duration: 1.5s;
   /* Chrome, Safari, Opera */
   animation-name: slide-right;
-  animation-duration: 1s;
+  animation-duration: 1.5s;
   animation-fill-mode: forwards; }
 
 .slide-from-right {
   -webkit-animation-name: slide-from-right;
   /* Chrome, Safari, Opera */
-  -webkit-animation-duration: 1s;
+  -webkit-animation-duration: 1.5s;
   /* Chrome, Safari, Opera */
   animation-name: slide-from-right;
-  animation-duration: 1s;
+  animation-duration: 1.5s;
   animation-fill-mode: forwards; }
 
 .slide-left {
   -webkit-animation-name: slide-left;
   /* Chrome, Safari, Opera */
-  -webkit-animation-duration: 1s;
+  -webkit-animation-duration: 1.5s;
   /* Chrome, Safari, Opera */
   animation-name: slide-left;
-  animation-duration: 1s;
+  animation-duration: 1.5s;
   animation-fill-mode: forwards; }
 
 .slide-from-left {
   -webkit-animation-name: slide-from-left;
   /* Chrome, Safari, Opera */
-  -webkit-animation-duration: 1s;
+  -webkit-animation-duration: 1.5s;
   /* Chrome, Safari, Opera */
   animation-name: slide-from-left;
-  animation-duration: 1s;
+  animation-duration: 1.5s;
   animation-fill-mode: forwards; }
 
 @keyframes slide-left {
