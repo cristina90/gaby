@@ -132,13 +132,9 @@ function xgaby_core_block_view($delta = '') {
       $output = '';
       $i = 0;
       foreach ($files as $uri => $file_data) {
-        if (!$i) {
-          $output .= '<img src="' . $uri . '" class="home-slide-' . $i . '">';
-        }
-        else {
-          $output .= '<img style="display:none;" src="' . $uri . '" class="home-slide-' . $i . '">';
-        }
-
+        $output .= '<div class="home-slide home-slide-' . $i . '">';
+        $output .= '<img src="' . $uri . '" >';
+        $output .= '</div>';
         ++$i;
       }
 
