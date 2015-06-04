@@ -530,12 +530,24 @@ body {
     left: 0;
     z-index: -9999;
     width: 100%;
-    height: auto; }
-    .pane-xgaby-core-xgaby-homepage-slider .pane-content img {
+    height: auto;
+    overflow: hidden; }
+    .pane-xgaby-core-xgaby-homepage-slider .pane-content .home-slide {
       position: fixed;
+      width: 100%;
+      height: 100%;
       top: 0;
       left: 0;
-      width: 100%; }
+      overflow: hidden; }
+    @media screen and (min-width: 641px) {
+      .pane-xgaby-core-xgaby-homepage-slider .pane-content img {
+        position: relative;
+        width: 100%; } }
+    @media screen and (max-width: 640px) {
+      .pane-xgaby-core-xgaby-homepage-slider .pane-content img {
+        position: relative;
+        height: 100%;
+        left: -84%; } }
 
 .page-blog, .page-node, .page-video, .page-pictures {
   background: url("/sites/all/themes/xgaby/images/page/BLOG-page.png") no-repeat center;
@@ -637,6 +649,9 @@ body {
       background: url("/sites/all/themes/xgaby/images/page/social_icons.png") -213px 0;
       background-size: auto 45px; }
 
+@media screen and (max-width: 420px) {
+  .social-buttons ul li a {
+    margin: 0; } }
 #homepage-pager {
   text-align: center;
   margin: 10px auto 0; }
@@ -711,7 +726,8 @@ body {
       line-height: 1.1;
       font-size: 30px;
       text-align: center;
-      font-family: Segoe Print; }
+      font-family: Segoe Print;
+      padding-top: 20px; }
     .page-blog .views-row .blog-teaser-right a {
       text-decoration: none;
       color: #000000; }
@@ -845,6 +861,9 @@ body {
     .pane-xgaby-core-xgaby-find-me-links .pane-content .find-me-source .find-me-source a:hover {
       color: #000000; }
 
+@media screen and (max-width: 420px) {
+  .pane-xgaby-core-xgaby-find-me-links .pane-content .find-me-source {
+    line-height: 1.5; } }
 .pane-xgaby-core-xgaby-find-me-links .pane-title {
   text-align: center;
   font-family: Segoe Print;
@@ -976,7 +995,7 @@ body {
   .page-node-1 p {
     font-size: 14px; }
   .page-node-1 .description {
-    padding: 0px 25px;
+    padding: 0px 0px 0px 8px;
     width: 95%; } }
 @media screen and (min-width: 960px) {
   .page-node-1 .image-about {
@@ -1087,37 +1106,37 @@ h3 {
 .slide-right {
   -webkit-animation-name: slide-right;
   /* Chrome, Safari, Opera */
-  -webkit-animation-duration: 1.5s;
+  -webkit-animation-duration: 1s;
   /* Chrome, Safari, Opera */
   animation-name: slide-right;
-  animation-duration: 1.5s;
+  animation-duration: 1s;
   animation-fill-mode: forwards; }
 
 .slide-from-right {
   -webkit-animation-name: slide-from-right;
   /* Chrome, Safari, Opera */
-  -webkit-animation-duration: 1.5s;
+  -webkit-animation-duration: 1s;
   /* Chrome, Safari, Opera */
   animation-name: slide-from-right;
-  animation-duration: 1.5s;
+  animation-duration: 1s;
   animation-fill-mode: forwards; }
 
 .slide-left {
   -webkit-animation-name: slide-left;
   /* Chrome, Safari, Opera */
-  -webkit-animation-duration: 1.5s;
+  -webkit-animation-duration: 1s;
   /* Chrome, Safari, Opera */
   animation-name: slide-left;
-  animation-duration: 1.5s;
+  animation-duration: 1s;
   animation-fill-mode: forwards; }
 
 .slide-from-left {
   -webkit-animation-name: slide-from-left;
   /* Chrome, Safari, Opera */
-  -webkit-animation-duration: 1.5s;
+  -webkit-animation-duration: 1s;
   /* Chrome, Safari, Opera */
   animation-name: slide-from-left;
-  animation-duration: 1.5s;
+  animation-duration: 1s;
   animation-fill-mode: forwards; }
 
 @keyframes slide-left {
