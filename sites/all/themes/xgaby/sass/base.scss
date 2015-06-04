@@ -138,11 +138,28 @@ body {
     z-index: -9999;
     width: 100%;
     height: auto;
-    img {
+    overflow: hidden;
+    .home-slide {
       position: fixed;
-      top: 0;
-      left: 0;
       width: 100%;
+      height: 100%;
+      top:0;
+      left:0;
+      overflow: hidden;
+    }
+
+    @media screen and (min-width: 641px) {
+      img {
+        position: relative;
+        width: 100%;
+      }
+    }
+    @media screen and (max-width: 640px) {
+      img {
+        position: relative;
+        height: 100%;
+        left:-84%;      //TODO: change this value to arrange slide images on small screens
+      }
     }
   }
 }
@@ -280,6 +297,16 @@ body {
 
   }
 }
+@media screen and (max-width: 420px) {
+  .social-buttons ul{
+    li{
+      a{
+        margin: 0;
+      }
+    }
+  }
+}
+
 
 #homepage-pager {
   text-align: center;
@@ -373,11 +400,6 @@ body {
   }
 }
 
-/*.panel-2col {
-  background: #ffffff;
-  margin: 25px auto;
-}
-*/
 .page-blog {
   .views-row {
     background: #ffffff;
@@ -394,6 +416,7 @@ body {
         font-size: 30px;
         text-align: center;
         font-family: Segoe Print;
+        padding-top: 20px;
       }
       a {
         text-decoration: none;
@@ -597,12 +620,22 @@ body {
       color: #ff9898;
       line-height: 3;
       text-transform: lowercase;
+      cursor: pointer;
       .find-me-source a:hover {
         color: #000000;
       }
     }
   }
 }
+@media screen and (max-width: 420px)  {
+  .pane-xgaby-core-xgaby-find-me-links {
+    .pane-content{
+    .find-me-source {
+      line-height: 1.5;
+    }
+    }
+    }
+  }
 
 .pane-xgaby-core-xgaby-find-me-links {
   .pane-title {
@@ -710,6 +743,7 @@ body {
           display: inline-block;
           img {
             width: 100%;
+            height: auto;
           }
         }
       }
@@ -729,6 +763,7 @@ body {
           display: inline-block;
           img {
             width: 100%;
+            height: auto;
           }
         }
         .field-item:last-child {
@@ -817,7 +852,7 @@ body {
       font-size: 14px;
     }
     .description {
-      padding: 0px 25px;
+      padding: 0px 0px 0px 8px;;
       width: 95%;
     }
   }
@@ -1028,11 +1063,7 @@ h3 {
 
 }
 
-@media screen and (max-width: 961px) {
-  .pane-content {
 
-  }
-}
 
 .slide-right {
   -webkit-animation-name: slide-right; /* Chrome, Safari, Opera */
