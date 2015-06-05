@@ -1050,7 +1050,22 @@ h3 {
       margin-bottom: 40px;
     }
   }
+  .pane-content{
+    .node-video{
+      .field-item-odd{
+        .media-vimeo-video{
+          .fluid-width-video-wrapper{
+            padding: 38.25%;
+          }
+
+        }
+      }
+    }
+  }
 }
+
+
+
 
 //global
 

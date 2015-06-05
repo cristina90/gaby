@@ -1104,6 +1104,8 @@ h3 {
     height: auto; } }
 .page-video .field-name-field-videos .field-item {
   margin-bottom: 40px; }
+.page-video .pane-content .node-video .field-item-odd .media-vimeo-video .fluid-width-video-wrapper {
+  padding: 38.25%; }
 
 .pane-content, .pane-xgaby-core-xgaby-mini-contact {
   max-width: 960px;
