@@ -157,19 +157,27 @@ body {
       overflow: hidden;
     }
 
-    @media screen and (min-width: 641px) {
+    @media screen and (min-width: 1000px) {
       img {
         position: relative;
         width: 100%;
       }
     }
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 610px) {
       img {
         position: relative;
         height: 100%;
         left:-84%;      //TODO: change this value to arrange slide images on small screens
       }
     }
+    @media screen and (min-width: 611px) and (max-width: 1000px)  {
+      img {
+        position: relative;
+        height: 100%;
+        left:-10%;      //TODO: change this value to arrange slide images on small screens
+      }
+    }
+    
   }
 }
 
@@ -628,14 +636,19 @@ body {
       background: #ffffff;
       margin: auto auto 30px;
       text-align: center;
-      font-size: 24px;
-      font-family: MyriadPro-Regular;
-      color: #ff9898;
       line-height: 3;
       text-transform: lowercase;
       cursor: pointer;
-      .find-me-source a:hover {
-        color: #000000;
+      a {
+        text-decoration: none;
+        font-size: 24px;
+        font-family: MyriadPro-Regular;
+        color: #ff9898;
+
+      }
+
+      a:hover {
+        //color: #000000;
       }
     }
   }
@@ -643,12 +656,12 @@ body {
 @media screen and (max-width: 420px)  {
   .pane-xgaby-core-xgaby-find-me-links {
     .pane-content{
-    .find-me-source {
-      line-height: 1.5;
-    }
-    }
+      .find-me-source {
+        line-height: 1.5;
+      }
     }
   }
+}
 
 .pane-xgaby-core-xgaby-find-me-links {
   .pane-title {
