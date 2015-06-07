@@ -218,6 +218,7 @@ body {
       width: 100%;
       margin: 0;
       float: left;
+      line-height: 25px;
     }
   }
 }
@@ -231,9 +232,10 @@ body {
       width: 50%;
       margin: 0;
       float: left;
-    }
-    li:last-child {
-      width: 100%;
+      line-height: 25px;
+      &:last-child {
+        width: 100%;
+      }
     }
   }
 }
@@ -574,6 +576,18 @@ body {
     &.pager-last, &.pager-first, &pager-ellipsis {
       display: none;
       visibility: hidden;
+    }
+  }
+}
+
+@media screen and (max-width: 610px) {
+  .item-list {
+    margin-top: 37px;
+    .pager{
+      padding: 0;
+    }
+    li {
+      margin: 0px 6px 6px 0;
     }
   }
 }

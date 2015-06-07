@@ -675,6 +675,7 @@ body {
     width: 100%;
     margin: 0;
     float: left;
+    line-height: 25px;
   }
 }
 @media screen and (min-width: 320px) and (max-width: 520px) {
@@ -687,6 +688,7 @@ body {
     width: 50%;
     margin: 0;
     float: left;
+    line-height: 25px;
   }
   #main-menu li:last-child, .menu-main-menu li:last-child {
     width: 100%;
@@ -979,6 +981,17 @@ body {
   visibility: hidden;
 }
 
+@media screen and (max-width: 610px) {
+  .item-list {
+    margin-top: 37px;
+  }
+  .item-list .pager {
+    padding: 0;
+  }
+  .item-list li {
+    margin: 0px 6px 6px 0;
+  }
+}
 .view-display-id-most_popular_blog .views-field-created .field-content {
   font-family: Raleway-Regular;
   font-size: 13px;
