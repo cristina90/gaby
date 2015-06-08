@@ -4,7 +4,7 @@
 
   Drupal.behaviors.homepageSlider = {
     attach: function(context) {
-      
+
       var resizeSlide = function () {
         var w = $('body').innerWidth();   //to ignore scroll size
         var h = window.innerHeight;
@@ -24,9 +24,14 @@
         });
 
       };
+
+
+
       $(document).ready(resizeSlide);
       $(window).load(resizeSlide);
       window.addEventListener("resize", resizeSlide);
+
+      setInterval(resizeSlide, 200); //not the best idea but for now it's fine;
 
       $('.home-slide-0').show();
       $('.home-slide-1').show().css('left','-100%');
