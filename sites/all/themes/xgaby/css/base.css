@@ -639,7 +639,7 @@ body {
 }
 
 .page-blog, .page-node, .page-video, .page-pictures {
-  background: url("/sites/all/themes/xgaby/images/page/BLOG-page.png") no-repeat center;
+  background: url("/sites/all/themes/xgaby/images/page/main_bg.jpg") no-repeat center;
   background-size: 100% auto;
   background-attachment: fixed;
 }
@@ -747,24 +747,22 @@ body {
   border-radius: 25px;
 }
 .social-buttons ul li[rel="twitter"] a {
-  background: url("/sites/all/themes/xgaby/images/page/social_icons.png") -2px 0;
-  background-size: auto 45px;
+  background: url("../images/social/social_icons.png") 0 45px;
 }
-.social-buttons ul li[rel="yt"] a {
-  background: url("/sites/all/themes/xgaby/images/page/social_icons.png") -57px 0;
-  background-size: auto 45px;
+.social-buttons ul li[rel="twitter"] a:hover {
+  background-position: 0 0;
 }
-.social-buttons ul li[rel="instagram"] a {
-  background: url("/sites/all/themes/xgaby/images/page/social_icons.png") -109px 0;
-  background-size: auto 45px;
+.social-buttons ul li[rel="vine"] a {
+  background: url("../images/social/social_icons.png") 45px 45px;
 }
-.social-buttons ul li[rel="skype"] a {
-  background: url("/sites/all/themes/xgaby/images/page/social_icons.png") -162px 0;
-  background-size: auto 45px;
+.social-buttons ul li[rel="vine"] a:hover {
+  background-position: 45px 0;
 }
-.social-buttons ul li[rel="gplus"] a {
-  background: url("/sites/all/themes/xgaby/images/page/social_icons.png") -213px 0;
-  background-size: auto 45px;
+.social-buttons ul li[rel="vimeo"] a {
+  background: url("../images/social/social_icons.png") 90px 45px;
+}
+.social-buttons ul li[rel="vimeo"] a:hover {
+  background-position: 90px 0;
 }
 
 @media screen and (max-width: 420px) {
@@ -1070,8 +1068,13 @@ body {
   font-size: 24px;
   color: #000000;
 }
-.pane-xgaby-core-xgaby-mini-contact .pane-content span {
+.pane-xgaby-core-xgaby-mini-contact .pane-content a {
+  color: #000000;
   font-family: Raleway-SemiBold;
+  text-decoration: none;
+}
+.pane-xgaby-core-xgaby-mini-contact .pane-content a:hover {
+  color: #ff9898;
 }
 
 .page-blog .node-full h2 {
@@ -1299,10 +1302,17 @@ h3 span {
   color: #ff9898;
 }
 
-.page-pictures .view-display-id-pictures_index li {
+.page-pictures .view-display-id-pictures_index .view-content:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.page-pictures .view-display-id-pictures_index .view-content li {
   margin-top: 41px;
 }
-.page-pictures .view-display-id-pictures_index .field-content img {
+.page-pictures .view-display-id-pictures_index .view-content .field-content img {
   float: left;
 }
 

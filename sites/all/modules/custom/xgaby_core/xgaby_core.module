@@ -191,11 +191,9 @@ function _xgaby_core_get_social_data() {
     return $vars;
   }
   $footer_vars = [
+    'vine_site_url',
+    'vimeo_site_url',
     'twitter_site_url',
-    'youtube_site_url',
-    'instagram_site_url',
-    'skype_site_url',
-    'gplus_site_url',
   ];
 
   foreach ($footer_vars as $var_name) {

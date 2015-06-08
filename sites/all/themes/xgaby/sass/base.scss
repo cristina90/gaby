@@ -63,6 +63,8 @@
   src: url("../fonts/Raleway-Regular.ttf");
 }
 
+$mainPink : #ff9898;
+
 body {
   text-align: center;
 }
@@ -177,12 +179,12 @@ body {
         left:-10%;      //TODO: change this value to arrange slide images on small screens
       }
     }
-    
+
   }
 }
 
 .page-blog, .page-node, .page-video, .page-pictures {
-  background: url("/sites/all/themes/xgaby/images/page/BLOG-page.png") no-repeat center;
+  background: url("/sites/all/themes/xgaby/images/page/main_bg.jpg") no-repeat center;
   background-size: 100% auto;
   background-attachment: fixed;
 
@@ -294,26 +296,25 @@ body {
     }
 
     &[rel="twitter"] a {
-      background: url("/sites/all/themes/xgaby/images/page/social_icons.png") -2px 0;
-      background-size: auto 45px;
-    }
-    &[rel="yt"] a {
-      background: url("/sites/all/themes/xgaby/images/page/social_icons.png") -57px 0;
-      background-size: auto 45px;
-    }
-    &[rel="instagram"] a {
-      background: url("/sites/all/themes/xgaby/images/page/social_icons.png") -109px 0;
-      background-size: auto 45px;
-    }
-    &[rel="skype"] a {
-      background: url("/sites/all/themes/xgaby/images/page/social_icons.png") -162px 0;
-      background-size: auto 45px;
-    }
-    &[rel="gplus"] a {
-      background: url("/sites/all/themes/xgaby/images/page/social_icons.png") -213px 0;
-      background-size: auto 45px;
+      background: url("../images/social/social_icons.png") 0 45px;
+      &:hover {
+        background-position: 0 0; 
+      }
     }
 
+    &[rel="vine"] a {
+      background: url("../images/social/social_icons.png") 45px 45px;
+      &:hover {
+        background-position: 45px 0; 
+      }
+    }
+
+    &[rel="vimeo"] a {
+      background: url("../images/social/social_icons.png") 90px 45px;
+      &:hover {
+        background-position: 90px 0; 
+      }
+    }
   }
 }
 @media screen and (max-width: 420px) {
@@ -696,8 +697,13 @@ body {
     font-family: Raleway-Light;
     font-size: 24px;
     color: #000000;
-    span {
+    a {
+      color: #000000;
       font-family: Raleway-SemiBold;
+      text-decoration: none;
+      &:hover {
+        color: $mainPink;
+      }
     }
   }
 }
@@ -990,11 +996,20 @@ h3 {
 //photo
 .page-pictures {
   .view-display-id-pictures_index {
-    li {
-      margin-top: 41px;
-    }
-    .field-content img {
-      float: left;
+    .view-content {
+      &:after { // simulate clearfix class
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+      }
+      li {
+        margin-top: 41px;
+      }
+      .field-content img {
+        float: left;
+      }
     }
   }
 }

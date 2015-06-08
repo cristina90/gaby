@@ -40,47 +40,36 @@ function xgaby_core_admin_form() {
     '#description' => t('Leave it empty if you don\'t want this link.'),
     '#default_value' => variable_get('xgaby_find_me_link_3'),
   );
-    $form['general']['xgaby_find_me_link_4'] = array(
+  $form['general']['xgaby_find_me_link_4'] = array(
     '#type' => 'textfield',
     '#title' => t('Find me Link 4'),
     '#description' => t('Leave it empty if you don\'t want this link.'),
     '#default_value' => variable_get('xgaby_find_me_link_4'),
   );
 
-  $form['footer'] = array(
+  $form['social'] = array(
     '#type' => 'fieldset',
     '#title' => t('Social links'),
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
   );
-  $form['footer']['twitter_site_url'] = array(
+  $form['social']['twitter_site_url'] = array(
     '#type' => 'textfield',
     '#title' => t('Twitter Site URL'),
     '#default_value' => variable_get('twitter_site_url'),
   );
-  $form['footer']['youtube_site_url'] = array(
+
+  $form['social']['vine_site_url'] = array(
     '#type' => 'textfield',
-    '#title' => t('YouTube Site URL'),
-    '#default_value' => variable_get('youtube_site_url'),
+    '#title' => t('Vine Site URL'),
+    '#default_value' => variable_get('vine_site_url'),
   );
 
-  $form['footer']['instagram_site_url'] = array(
+  $form['social']['vimeo_site_url'] = array(
     '#type' => 'textfield',
-    '#title' => t('Instagram Site URL'),
-    '#default_value' => variable_get('instagram_site_url'),
+    '#title' => t('Vimeo Site URL'),
+    '#default_value' => variable_get('vimeo_site_url'),
   );
-
-  $form['footer']['skype_site_url'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Skype Site URL'),
-    '#default_value' => variable_get('skype_site_url'),
-  );
-
-  $form['footer']['gplus_site_url'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Google Plus Site URL'),
-    '#default_value' => variable_get('gplus_site_url'),
-  );
-
+  
   return system_settings_form($form);
 }
