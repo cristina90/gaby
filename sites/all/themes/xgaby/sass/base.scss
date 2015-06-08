@@ -79,16 +79,16 @@ body {
 //Index page
 
 .page-homepage {
-  //@media screen and (max-width: 480px) {
-  //  background: url("/sites/all/themes/xgaby/images/page/BG.png") no-repeat center;
-  //  background-size:  100% auto;
-  //  background-attachment: fixed;
-  //}
-  //@media screen and (min-width: 481px) {
-  //  background: url("/sites/all/themes/xgaby/images/page/BG.png") no-repeat center;
-  //  background-size: 100% auto;
-  //  background-attachment: fixed;
-  //}
+
+  .pane-page-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+
   .main-logo {
     text-align: center;
     text-decoration: none;
@@ -144,7 +144,6 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -9999;
     width: 100%;
     height: auto;
     overflow: hidden;
@@ -156,28 +155,9 @@ body {
       left:0;
       overflow: hidden;
     }
-
-    @media screen and (min-width: 1000px) {
-      img {
-        position: relative;
-        width: 100%;
-      }
+    img {
+      position: relative;
     }
-    @media screen and (max-width: 610px) {
-      img {
-        position: relative;
-        height: 100%;
-        left:-84%;      //TODO: change this value to arrange slide images on small screens
-      }
-    }
-    @media screen and (min-width: 611px) and (max-width: 1000px)  {
-      img {
-        position: relative;
-        height: 100%;
-        left:-10%;      //TODO: change this value to arrange slide images on small screens
-      }
-    }
-    
   }
 }
 
@@ -1226,6 +1206,8 @@ h3 {
     display: none;
   }
 }
+
+
 
 
 

@@ -4,6 +4,29 @@
 
   Drupal.behaviors.homepageSlider = {
     attach: function(context) {
+      
+      var resizeSlide = function () {
+        var w = $('body').innerWidth();   //to ignore scroll size
+        var h = window.innerHeight;
+        $('.home-slide img').each(function () {
+          var imgAspect = $(this)[0].clientWidth / $(this)[0].clientHeight;
+          var windowAspect = w / h;
+          var wdiff = $('body').innerWidth() - $(this)[0].clientWidth;
+          if (imgAspect > windowAspect) {
+            $(this).width('auto');
+            $(this).height('100%');
+            $(this).css('left', wdiff/2);
+          } else {
+            $(this).width('100%');
+            $(this).height('auto');
+            $(this).css('left', wdiff/2);
+          }
+        });
+
+      };
+      $(document).ready(resizeSlide);
+      $(window).load(resizeSlide);
+      window.addEventListener("resize", resizeSlide);
 
       $('.home-slide-0').show();
       $('.home-slide-1').show().css('left','-100%');
