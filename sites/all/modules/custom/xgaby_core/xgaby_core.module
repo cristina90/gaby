@@ -105,7 +105,7 @@ function xgaby_core_block_view($delta = '') {
     case 'xgaby_mini_contact':
       $mini_footer = variable_get('xgaby_mini_contact');
       if ($mini_footer) {
-        $block['content'] = $mini_footer;
+        $block['content'] = '<div id="wrapp-mini_contact">' . $mini_footer . '</div>';
       }
       break;
 
@@ -115,8 +115,11 @@ function xgaby_core_block_view($delta = '') {
       $quantity = range(0, 4);
 
       foreach ($quantity as $source) {
-        if ($source = variable_get('xgaby_find_me_link_' . ++$source)) {
-          $vars['links'][] = $source;
+        ++$source;
+        $link = variable_get('xgaby_find_me_link_' . $source, '');
+        $title = variable_get('xgaby_find_me_title_' . $source, '');
+        if ($title && $link) {
+          $vars['links'][$title] = $link;
         }
       }
 
@@ -191,11 +194,9 @@ function _xgaby_core_get_social_data() {
     return $vars;
   }
   $footer_vars = [
+    'vine_site_url',
+    'vimeo_site_url',
     'twitter_site_url',
-    'youtube_site_url',
-    'instagram_site_url',
-    'skype_site_url',
-    'gplus_site_url',
   ];
 
   foreach ($footer_vars as $var_name) {

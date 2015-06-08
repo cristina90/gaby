@@ -553,7 +553,7 @@ body {
       position: relative; }
 
 .page-blog, .page-node, .page-video, .page-pictures {
-  background: url("/sites/all/themes/xgaby/images/page/BLOG-page.png") no-repeat center;
+  background: url("/sites/all/themes/xgaby/images/page/main_bg.jpg") no-repeat center;
   background-size: 100% auto;
   background-attachment: fixed; }
   @media screen and (max-width: 1200px) {
@@ -562,6 +562,8 @@ body {
       -moz-background-size: cover;
       -o-background-size: cover;
       background-size: cover; } }
+  .page-blog .pane-page-content, .page-node .pane-page-content, .page-video .pane-page-content, .page-pictures .pane-page-content {
+    margin-top: 45px; }
 
 .inline li, .item-main-menu {
   display: inline;
@@ -639,20 +641,17 @@ body {
       -moz-border-radius: 25px;
       border-radius: 25px; }
     .social-buttons ul li[rel="twitter"] a {
-      background: url("/sites/all/themes/xgaby/images/page/social_icons.png") -2px 0;
-      background-size: auto 45px; }
-    .social-buttons ul li[rel="yt"] a {
-      background: url("/sites/all/themes/xgaby/images/page/social_icons.png") -57px 0;
-      background-size: auto 45px; }
-    .social-buttons ul li[rel="instagram"] a {
-      background: url("/sites/all/themes/xgaby/images/page/social_icons.png") -109px 0;
-      background-size: auto 45px; }
-    .social-buttons ul li[rel="skype"] a {
-      background: url("/sites/all/themes/xgaby/images/page/social_icons.png") -162px 0;
-      background-size: auto 45px; }
-    .social-buttons ul li[rel="gplus"] a {
-      background: url("/sites/all/themes/xgaby/images/page/social_icons.png") -213px 0;
-      background-size: auto 45px; }
+      background: url("../images/social/social_icons.png") 0 45px; }
+      .social-buttons ul li[rel="twitter"] a:hover {
+        background-position: 0 0; }
+    .social-buttons ul li[rel="vine"] a {
+      background: url("../images/social/social_icons.png") 45px 45px; }
+      .social-buttons ul li[rel="vine"] a:hover {
+        background-position: 45px 0; }
+    .social-buttons ul li[rel="vimeo"] a {
+      background: url("../images/social/social_icons.png") 90px 45px; }
+      .social-buttons ul li[rel="vimeo"] a:hover {
+        background-position: 90px 0; }
 
 @media screen and (max-width: 420px) {
   .social-buttons ul li a {
@@ -677,12 +676,6 @@ body {
     width: 1px; }
   #homepage-pager a.selected span {
     background: #ffffff; }
-
-.page-blog .pane-page-content {
-  max-width: 960px;
-  margin: auto; }
-.page-blog .view-content .views-row .article {
-  text-align: center; }
 
 #logo img {
   margin: 31px auto 0 auto;
@@ -721,6 +714,8 @@ body {
 .page-blog .views-row {
   background: #ffffff;
   margin-top: 20px; }
+  .page-blog .views-row:first-child {
+    margin-top: auto; }
   .page-blog .views-row .blog-teaser-left {
     float: left; }
   .page-blog .views-row .blog-teaser-right {
@@ -867,14 +862,15 @@ body {
     background: #ffffff;
     margin: auto auto 30px;
     text-align: center;
-    line-height: 3;
-    text-transform: lowercase;
-    cursor: pointer; }
+    padding: 15px 0;
+    text-transform: lowercase; }
     .pane-xgaby-core-xgaby-find-me-links .pane-content .find-me-source a {
       text-decoration: none;
       font-size: 24px;
       font-family: MyriadPro-Regular;
       color: #ff9898; }
+      .pane-xgaby-core-xgaby-find-me-links .pane-content .find-me-source a:hover {
+        color: #000000; }
 
 @media screen and (max-width: 420px) {
   .pane-xgaby-core-xgaby-find-me-links .pane-content .find-me-source {
@@ -886,16 +882,23 @@ body {
   color: #ffffff;
   margin: 23px auto 7px; }
 
-.pane-xgaby-core-xgaby-mini-contact .pane-content {
-  background: #ffffff;
-  margin: auto;
-  line-height: 4.4;
-  text-align: center;
-  font-family: Raleway-Light;
-  font-size: 24px;
-  color: #000000; }
-  .pane-xgaby-core-xgaby-mini-contact .pane-content span {
-    font-family: Raleway-SemiBold; }
+.pane-xgaby-core-xgaby-mini-contact {
+  padding-bottom: 20px; }
+  .pane-xgaby-core-xgaby-mini-contact .pane-content {
+    background: #ffffff;
+    margin: auto;
+    text-align: center;
+    font-family: Raleway-Light;
+    font-size: 24px;
+    color: #000000; }
+    .pane-xgaby-core-xgaby-mini-contact .pane-content #wrapp-mini_contact {
+      padding: 20px 0; }
+      .pane-xgaby-core-xgaby-mini-contact .pane-content #wrapp-mini_contact a {
+        color: #000000;
+        font-family: Raleway-SemiBold;
+        text-decoration: none; }
+        .pane-xgaby-core-xgaby-mini-contact .pane-content #wrapp-mini_contact a:hover {
+          color: #ff9898; }
 
 .page-blog .node-full h2 {
   margin-top: 20px;
@@ -1057,7 +1060,12 @@ body {
 h4 {
   float: right;
   font-family: "Segoe Print";
-  color: #000000; }
+  color: #000000;
+  margin-top: 5px;
+  margin-bottom: 15px; }
+
+h3 {
+  margin-bottom: 0; }
 
 .description {
   float: left; }
@@ -1072,9 +1080,15 @@ h3 {
   h3 span {
     color: #ff9898; }
 
-.page-pictures .view-display-id-pictures_index li {
+.page-pictures .view-display-id-pictures_index .view-content:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden; }
+.page-pictures .view-display-id-pictures_index .view-content li {
   margin-top: 41px; }
-.page-pictures .view-display-id-pictures_index .field-content img {
+.page-pictures .view-display-id-pictures_index .view-content .field-content img {
   float: left; }
 
 @media screen and (max-width: 320px) {

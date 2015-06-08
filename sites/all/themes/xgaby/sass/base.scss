@@ -63,7 +63,12 @@
   src: url("../fonts/Raleway-Regular.ttf");
 }
 
+$mainPink : #ff9898;
+
 body {
+  @media screen and (min-width: 1100px) {
+    //border: 10px solid #fff;
+  }
   text-align: center;
 }
 
@@ -87,6 +92,7 @@ body {
     width: 100%;
     height: auto;
     overflow: hidden;
+    //border: 10px solid #fff;
   }
 
   .main-logo {
@@ -162,7 +168,7 @@ body {
 }
 
 .page-blog, .page-node, .page-video, .page-pictures {
-  background: url("/sites/all/themes/xgaby/images/page/BLOG-page.png") no-repeat center;
+  background: url("/sites/all/themes/xgaby/images/page/main_bg.jpg") no-repeat center;
   background-size: 100% auto;
   background-attachment: fixed;
 
@@ -171,6 +177,10 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+  }
+
+  .pane-page-content {
+    margin-top: 45px;
   }
 
 }
@@ -274,26 +284,25 @@ body {
     }
 
     &[rel="twitter"] a {
-      background: url("/sites/all/themes/xgaby/images/page/social_icons.png") -2px 0;
-      background-size: auto 45px;
-    }
-    &[rel="yt"] a {
-      background: url("/sites/all/themes/xgaby/images/page/social_icons.png") -57px 0;
-      background-size: auto 45px;
-    }
-    &[rel="instagram"] a {
-      background: url("/sites/all/themes/xgaby/images/page/social_icons.png") -109px 0;
-      background-size: auto 45px;
-    }
-    &[rel="skype"] a {
-      background: url("/sites/all/themes/xgaby/images/page/social_icons.png") -162px 0;
-      background-size: auto 45px;
-    }
-    &[rel="gplus"] a {
-      background: url("/sites/all/themes/xgaby/images/page/social_icons.png") -213px 0;
-      background-size: auto 45px;
+      background: url("../images/social/social_icons.png") 0 45px;
+      &:hover {
+        background-position: 0 0; 
+      }
     }
 
+    &[rel="vine"] a {
+      background: url("../images/social/social_icons.png") 45px 45px;
+      &:hover {
+        background-position: 45px 0; 
+      }
+    }
+
+    &[rel="vimeo"] a {
+      background: url("../images/social/social_icons.png") 90px 45px;
+      &:hover {
+        background-position: 90px 0; 
+      }
+    }
   }
 }
 @media screen and (max-width: 420px) {
@@ -330,22 +339,6 @@ body {
 
   a.selected span {
     background: #ffffff;
-  }
-}
-
-//blog
-
-.page-blog {
-  .pane-page-content {
-    max-width: 960px;
-    margin: auto;
-  }
-  .view-content {
-    .views-row {
-      .article {
-        text-align: center;
-      }
-    }
   }
 }
 
@@ -403,6 +396,9 @@ body {
   .views-row {
     background: #ffffff;
     margin-top: 20px;
+    &:first-child{
+      margin-top: auto;
+    }
     .blog-teaser-left {
       float: left;
     }
@@ -630,19 +626,16 @@ body {
       background: #ffffff;
       margin: auto auto 30px;
       text-align: center;
-      line-height: 3;
+      padding: 15px 0;
       text-transform: lowercase;
-      cursor: pointer;
       a {
         text-decoration: none;
         font-size: 24px;
         font-family: MyriadPro-Regular;
-        color: #ff9898;
-
-      }
-
-      a:hover {
-        //color: #000000;
+        color: $mainPink;
+        &:hover {
+          color: #000000;
+        }
       }
     }
   }
@@ -668,16 +661,24 @@ body {
 }
 
 .pane-xgaby-core-xgaby-mini-contact {
+  padding-bottom: 20px;
   .pane-content {
     background: #ffffff;
     margin: auto;
-    line-height: 4.4;
     text-align: center;
     font-family: Raleway-Light;
     font-size: 24px;
     color: #000000;
-    span {
-      font-family: Raleway-SemiBold;
+    #wrapp-mini_contact {
+      padding: 20px 0;
+      a {
+        color: #000000;
+        font-family: Raleway-SemiBold;
+        text-decoration: none;
+        &:hover {
+          color: $mainPink;
+        }
+      }
     }
   }
 }
@@ -947,8 +948,13 @@ h4 {
   float: right;
   font-family: "Segoe Print";
   color: #000000;
+  margin-top: 5px;
+  margin-bottom: 15px;
 }
 
+h3 {
+  margin-bottom: 0;
+}
 .description {
   float: left;
 }
@@ -970,11 +976,20 @@ h3 {
 //photo
 .page-pictures {
   .view-display-id-pictures_index {
-    li {
-      margin-top: 41px;
-    }
-    .field-content img {
-      float: left;
+    .view-content {
+      &:after { // simulate clearfix class
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+      }
+      li {
+        margin-top: 41px;
+      }
+      .field-content img {
+        float: left;
+      }
     }
   }
 }
