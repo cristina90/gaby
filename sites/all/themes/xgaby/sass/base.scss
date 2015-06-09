@@ -135,6 +135,9 @@ body {
     h1 {
       margin: 0px;
       font-family: Raleway-ExtraBold;
+      span {
+        color: $mainPink;
+      }
     }
     p {
       margin: 0px;

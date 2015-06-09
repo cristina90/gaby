@@ -1,6 +1,6 @@
 <div class="main-home-block">
   <a href="/" class="main-logo">
-    <h1><?php print $site_name; ?></h1>
+    <h1><span>X</span>GABYMOOR</h1>
     <p><?php print t('feel your passion with me'); ?></p>
   </a>
 
