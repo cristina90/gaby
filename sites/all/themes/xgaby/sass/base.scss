@@ -87,12 +87,11 @@ body {
 
   .pane-page-content {
     position: absolute;
-    top: 0;
     left: 0;
     width: 100%;
     height: auto;
     overflow: hidden;
-    //border: 10px solid #fff;
+    bottom: 0;
   }
 
   .main-logo {
@@ -254,7 +253,6 @@ body {
 .main-home-block {
   background: rgba(0, 0, 0, 0.27);
   padding: 30px 0px 10px 0px;
-  margin-top: 18%;
 }
 
 .footer-social {
@@ -291,16 +289,16 @@ body {
     }
 
     &[rel="vine"] a {
-      background: url("../images/social/social_icons.png") 45px 45px;
+      background: url("../images/social/social_icons.png") 90px 45px;
       &:hover {
-        background-position: 45px 0; 
+        background-position: 90px 0; 
       }
     }
 
     &[rel="vimeo"] a {
-      background: url("../images/social/social_icons.png") 90px 45px;
+      background: url("../images/social/social_icons.png") 45px 45px;
       &:hover {
-        background-position: 90px 0; 
+        background-position: 45px 0; 
       }
     }
   }
