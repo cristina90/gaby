@@ -600,6 +600,9 @@ body {
   margin: 0px;
   font-family: Raleway-ExtraBold;
 }
+.page-homepage .main-logo h1 span {
+  color: #ff9898;
+}
 .page-homepage .main-logo p {
   margin: 0px;
   font-family: Raleway-ExtraLight;
